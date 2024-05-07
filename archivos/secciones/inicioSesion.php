@@ -40,7 +40,7 @@
         <label for="password">Contraseña*</label>
         <input type="password" id="password" name="password" required>
 
-        <button type="submit">Continuar</button>
+        <button type="submit"><a href="inicio-con-registro.php">Continuar</a></button>
 
         <p>¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a></p>
     </form>

@@ -36,13 +36,20 @@
     bottom: -2px; /* Coloca la línea debajo del texto */
     width: 0; /* Ancho inicial de la línea (se activará solo al pasar el mouse) */
     height: 2px; /* Altura de la línea */
-    background-color: rgba(171, 178, 211, 0.9); /* Color de la línea */
+    background-color: rgba(54, 109, 237, 0.9); /* Color de la línea */
     transition: width 0.3s ease-in-out; /* Transición suave */
 }
 
 .navbar2 a:hover::after {
     width: 100%; /* Ancho de la línea al 100% al pasar el mouse */
 }
+
+.navbar2 li:first-child a::after {
+    width: 100%; /* Ancho de la línea al 100% */
+}
+
+
+
 
 /* Estilos para el contenedor del usuario */
 .cc-usuario a{
@@ -58,4 +65,66 @@
     margin: 0 7px;
 }
 
+.grid-tramites{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%,12rem), auto));
+    justify-content: center;
+    gap: 2rem;
+}
+.titulo-tramites{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}
 
+.cuadros-tramites {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center;
+    width: 15rem;
+    height: 12rem;
+    background-color: #F8F9FA;
+    transition: 0.5s linear;
+    border: 1px solid #7775752a;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.cuadros-tramites a {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    color: #1b1b1b;
+    gap: 0.5rem;
+
+}
+
+.cuadros-tramites a .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem; /* Altura fija para mantener todos los íconos en la misma posición */
+}
+
+.cuadros-tramites a i {
+    color: #194e9a;
+    font-size: 2.5rem; /* Asegura un tamaño uniforme para todos los íconos */
+}
+.cuadros-tramites a p {
+    height: 3rem; /* Altura fija para el párrafo de texto */
+    text-align: center;
+    overflow: hidden; /* Oculta texto desbordado si es necesario */
+    display: flex;
+    justify-content: center;
+}
+
+.cuadros-tramites:hover {
+    transform: scale(1.05); /* Escala */
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.2); /* Un poco más de sombra para resaltar */
+    transition: 0.2s linear; 
+
+}
