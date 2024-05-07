@@ -9,6 +9,8 @@
   <!-- iconos de la pagina -->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
   <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="icon" href="imagenes/Logo-Catastro-Chiquinquira.png" type="image/png">
+
 
 </head>
 
