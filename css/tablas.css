@@ -1,0 +1,50 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  display: block;
+  border-spacing: 0;
+  white-space: nowrap;
+  transition: 0.5s linear;
+  border: 1px solid #7775752a;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color:  #5f5f5fc0;
+  color: #ffff;
+  text-align: center;
+  padding: 0.8rem;
+  font-weight: 400;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #F8F9FA;
+}
+
+.icono-descarga{
+    text-align: center;
+}
+
+.icono-descarga i {
+    font-size: 27px; /* Cambia el tamaño del ícono según tus necesidades */
+    color: #194e9a;
+}
+
+.icono-descarga i:hover {
+    transform: scale(1.1); /* Escala */
+    transition: 0.3s ease-in-out; 
+}

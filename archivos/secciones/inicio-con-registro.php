@@ -30,7 +30,7 @@
     </a>
 </div>
 <div class="cuadros-tramites">
-    <a href="">
+    <a href="estado-tramite.php">
         <span class="icon-container"><i class='bx bx-loader-circle'></i></span>
         <p>Consulte el estado del trámite</p>
     </a>
