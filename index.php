@@ -236,7 +236,7 @@
   </section>
   <!-- Copyright -->
   <div class="copyright">
-        <p>Copyright © <span id="year"></span> Felipe Diaz, Diego Nuñez y Roberth Garcia</p>
+        <p>Copyright ©<span id="year"></span> Felipe Diaz, Diego Nuñez y Roberth Garcia</p>
     </div>
 
     <script>
