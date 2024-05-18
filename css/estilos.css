@@ -436,7 +436,7 @@ Municipio de Chiquinquirá imagen y texto*/
   .footer-box {
     border-right: none; /* Ocultar borde derecho */
     padding-right: 0; /* Eliminar espacio para separar la línea */
-    border-bottom: 1.5px solid #ccc; /* Agregar borde inferior */
+    border-bottom: 1.5px solid #cccccc56; /* Agregar borde inferior */
     padding-bottom: 20px; /* Añadir espacio para separar la línea */
   }
 
