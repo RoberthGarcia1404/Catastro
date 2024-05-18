@@ -236,9 +236,13 @@
   </section>
   <!-- Copyright -->
   <div class="copyright">
-    <p>Copyright © 2023 Felipe Diaz, Diego Nuñez y Roberth Garcia</p>
-  </div>
+        <p>Copyright © <span id="year"></span> Felipe Diaz, Diego Nuñez y Roberth Garcia</p>
+    </div>
 
+    <script>
+        // JavaScript para actualizar el año automáticamente
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   <!-- archivo java scrip -->
   <script src="js/main.js"></script>
 </body>

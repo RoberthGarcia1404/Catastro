@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 * {
+  
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
@@ -24,6 +25,7 @@
 }
 
 img {
+  margin-top: 15%;
   width: 100%;
 }
 
@@ -352,11 +354,21 @@ Municipio de Chiquinquirá imagen y texto*/
   border: none;
 }
 
-/*Pie de pagina*/
+/*Pie de pagina*//*Pie de pagina*/
 .footer {
+  text-align: justify;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, auto));
   gap: 1.5rem;
+}
+
+.footer-box {
+  border-right: 1.5px solid #ccc; /* Agregar borde derecho */
+  padding-right: 20px; /* Añadir espacio para separar la línea */
+}
+
+.footer-box:last-child {
+  border-right: none; /* No aplicar borde al último elemento */
 }
 
 .footer-box h2 {
@@ -394,6 +406,7 @@ Municipio de Chiquinquirá imagen y texto*/
 .footer-box li a:hover {
   color: #194e9a;
 }
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -404,6 +417,7 @@ Municipio de Chiquinquirá imagen y texto*/
   display: flex;
   align-items: center;
 }
+
 .contact i {
   font-size: 20px;
   margin-right: 0.6rem;
@@ -414,6 +428,21 @@ Municipio de Chiquinquirá imagen y texto*/
   color: #e62a2a;
   font-size: 20px;
 }
+
+/* Media query para resoluciones pequeñas */
+@media screen and (max-width: 588px) {
+  .footer-box {
+    border-right: none; /* Ocultar borde derecho */
+    padding-right: 0; /* Eliminar espacio para separar la línea */
+    border-bottom: 1.5px solid #ccc; /* Agregar borde inferior */
+    padding-bottom: 20px; /* Añadir espacio para separar la línea */
+  }
+
+  .footer-box:last-child {
+    border-bottom: none; /* No aplicar borde inferior al último elemento */
+  }
+}
+
 
 .copyright {
   padding: 20px;
