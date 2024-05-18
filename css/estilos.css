@@ -356,7 +356,6 @@ Municipio de Chiquinquirá imagen y texto*/
 
 /*Pie de pagina*//*Pie de pagina*/
 .footer {
-  text-align: justify;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, auto));
   gap: 1.5rem;
