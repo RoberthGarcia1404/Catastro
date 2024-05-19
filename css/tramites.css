@@ -176,3 +176,15 @@
     font-size: 0.9rem;
   }
 
+.accion-iconos-tabla{
+    display: flex;
+    gap: 0.9em;
+    padding: 0.9rem;
+}
+
+.accion-iconos-tabla i{
+    font-size: 27px;
+    color: #194e9a;
+
+}
+
