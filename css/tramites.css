@@ -178,5 +178,20 @@
     font-size: 0.9rem;
   }
 
+  .accion-iconos-tabla{
+    display: flex;
+    gap:0.9rem;
+    margin: 0.2rem;
+
+  }
+  .accion-iconos-tabla i{
+    font-size: 27px;
+    color: #194e9a;
+  }
+  .accion-iconos-tabla i:hover {
+    transform: scale(1.09); /* Escala */
+    transition: 0.2s linear; 
+}
+
   /*--------------FIN consulta-tramite.php-----------------*/
 
