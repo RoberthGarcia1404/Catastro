@@ -23,7 +23,7 @@
             </select>
           </div>
           <div class="campo">
-            <label for="fecha_expedicion">Fecha de Expedición Cédula *</label>
+            <label for="fecha_expedicion">Fecha de Expedición *</label>
             <div class="input-icon">
               <input type="date" id="fecha_expedicion" name="fecha_expedicion">
             </div>
