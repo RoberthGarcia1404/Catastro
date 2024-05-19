@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catastro Chiquinquirá</title>
+  <title>Catastro</title>
 
   <link rel="stylesheet" href="../../css/acordeonn.css" />
   <link rel="stylesheet" href="../../css/estilos.css" />
@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="../../css/inicio-sesion.css">
   <link rel="stylesheet" href="../../css/tramites.css">
   <link rel="stylesheet" href="../../css/tablas.css">
+  <link rel="stylesheet" href="../../css/registro.css">
   <!-- iconos de la pagina -->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
   <link rel="icon" href="../../imagenes/Logo-Catastro-Chiquinquira.png" type="image/png">

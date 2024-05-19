@@ -15,7 +15,6 @@
     border-radius: 0.8rem;
     box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
     background-color: #fff;
-   
 
 }
 
@@ -153,10 +152,9 @@
     width: 30rem;
 }
 .contenedor-formulario-radicacion label {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #1c244e;
     margin-top: 0.625rem; /* 10px */
-
   }
 
   .contenedor-formulario-radicacion input{
@@ -177,21 +175,4 @@
     cursor: pointer;
     font-size: 0.9rem;
   }
-
-  .accion-iconos-tabla{
-    display: flex;
-    gap:0.9rem;
-    margin: 0.2rem;
-
-  }
-  .accion-iconos-tabla i{
-    font-size: 27px;
-    color: #194e9a;
-  }
-  .accion-iconos-tabla i:hover {
-    transform: scale(1.09); /* Escala */
-    transition: 0.2s linear; 
-}
-
-  /*--------------FIN consulta-tramite.php-----------------*/
 

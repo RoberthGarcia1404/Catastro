@@ -1,0 +1,132 @@
+/* Estilo para el contenedor principal del registro */
+.registro-contenedor {
+    margin: 0 10%; /* Márgenes laterales */
+    background-color: #f9f9f9; /* Fondo gris claro */
+    border-radius: 0.8rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+    padding: 1.25rem;
+  }
+  
+  /* Estilo para el contenedor del registro */
+  .registro {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    gap: 20px; /* Espacio entre las secciones izquierda y derecha */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  }
+  
+  /* Estilo para la parte izquierda del registro y la parte derecha */
+  .registro-izquierda, .registro-derecha {
+    flex: 1; /* Ocupa el espacio disponible */
+    padding: 5px;
+  }
+  
+  /* Estilo para los campos de entrada del formulario */
+  .campo {
+    margin-bottom: 20px; /* Margen inferior */
+  }
+  
+  /* Estilo para las etiquetas de los campos */
+  label {
+    display: block;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 5px;
+  }
+  
+  /* Estilos para los campos de tipo text, email, tel, fecha y select */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Relleno interno */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye el borde y el relleno en el ancho total */
+  }
+
+  /* Estilo para el checkbox y su etiqueta */
+  .campo-checkbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .campo-checkbox input[type="checkbox"] {
+    margin-right: 10px; /* Espacio entre el checkbox y la etiqueta */
+  }
+  
+  .campo-checkbox label {
+    display: inline; /* Mostrar la etiqueta en línea con el checkbox */
+  }
+
+
+
+
+
+
+
+
+  /* Estilo para el contenedor de los botones */
+.botones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+  }
+  
+  /* Estilo para los botones */
+  .boton-registrarse,
+  .boton-cancelar {
+    padding: 10px 20px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: calc(50% - 5px); /* Ajuste para dejar espacio entre los botones */
+    border: none; /* Sin borde */
+  }
+  
+  /* Estilo para el botón de enviar del formulario */
+  .boton-registrarse {
+    background-color: #194e9a; /* Color de fondo azul */
+    color: white; /* Color de texto blanco */
+    
+
+  }
+  
+  /* Cambio de color de fondo al pasar el ratón sobre el botón "Registrarse" */
+  .boton-registrarse:hover {
+    background-color: #0e3a7f; /* Color de fondo azul oscuro */
+  }
+  
+  /* Estilo para el botón "Cancelar" */
+  .boton-cancelar {
+    background-color: #ccc; /* Color de fondo gris */
+    color: #333; /* Color de texto gris oscuro */
+
+  }
+  
+  /* Cambio de color de fondo al pasar el ratón sobre el botón "Cancelar" */
+  .boton-cancelar:hover {
+    background-color: #bdbdbdf0; /* Color de fondo gris más oscuro */
+  }
+  
+  /* Media query para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    /* Estilo para los botones en pantallas pequeñas */
+    .botones {
+      flex-direction: column;
+      align-items: stretch; /* Para que los botones ocupen todo el ancho */
+    }
+  
+    /* Espacio entre los botones en pantallas pequeñas */
+    .boton-cancelar {
+      margin-top: 10px;
+    }
+  }
+  
