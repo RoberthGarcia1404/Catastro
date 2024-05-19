@@ -1,14 +1,15 @@
 /* Estilos para el contenedor principal del encabezado */
 .header2 {
-    
     display: flex;
     flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando no hay suficiente espacio */
     justify-content: space-between; /* Distribuye los elementos al principio y al final del contenedor */
     margin-top: 7rem;
     padding: 0.5rem 2rem;
-    width: calc(100% - 8rem); /* Asegura que el contenedor tenga un espacio a la izquierda y derecha */
-    margin-left: 5rem;
-    margin-right: 1rem; /* Añade un margen de 1rem a cada lado */
+    width: calc(100% - 10rem); /* Asegura que el contenedor tenga un espacio a la izquierda y derecha */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+
+    /*Estilos del contenedor*/
     transition: 0.5s linear; 
     border: 1px solid #7775752a;
     border-radius: 0.8rem;
