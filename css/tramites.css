@@ -178,7 +178,7 @@
 
 .accion-iconos-tabla{
     display: flex;
-    gap: 0.9em;
+    gap: 0.9rem;
     padding: 0.9rem;
 }
 
@@ -187,4 +187,12 @@
     color: #194e9a;
 
 }
+.accion-iconos-tabla i:hover {
+    transform: scale(1.07); /* Escala */
+    transition: 0.2s linear; 
+}
+
+/*--------------FIN consulta-tramite.php-----------------*/
+
+
 
