@@ -3,7 +3,7 @@
 <?php include_once 'header2.php'; ?>
 
 <section style="margin-top:-15px;">
-    <h3 class="titulo-tramites titulos-principales">Consultar Predios </h3>
+    <h3 class="titulo-tramites titulos-principales">Consultar Predios</h3>
     <p class=" parrafos-principales" style="margin-top:-1.5rem;">A continuación podrá consultar los predios que tiene asociados.</p>
     <div class="grid-tramites">
         <table>
@@ -27,12 +27,8 @@
                     <td>060-37835</td>
                     <td>C 38 9 92</td>
                     <td>
-                        <button class="action-btn">
-                            <span class="icon-search">&#128269;</span>
-                        </button>
-                        <button class="action-btn">
-                            <span class="icon-add">&#10133;</span>
-                        </button>
+                        <span><i class='bx bx-search-alt-2'></i></span>
+
                     </td>
                 </tr>
                 <tr>
