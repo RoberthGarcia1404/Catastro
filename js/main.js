@@ -68,3 +68,29 @@ agregarComportamientoSubMenu(
 );
 
 
+
+/*HEADER 2 tramites con registro */
+/* Estilo para la linea de el enlace permanesca activo */
+// Espera a que todo el contenido del DOM esté completamente cargado antes de ejecutar el script
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Obtiene el nombre del archivo actual de la URL
+  // Ejemplo: si la URL es "http://ejemplo.com/inicio-con-registro.php",
+  // la variable 'currentPage' será "inicio-con-registro.php"
+  const currentPage = window.location.pathname.split('/').pop();
+  
+  // Selecciona todos los enlaces dentro de la barra de navegación con la clase 'navbar2'
+  const navLinks = document.querySelectorAll('.navbar2 a');
+
+  // Recorre cada enlace en la barra de navegación
+  navLinks.forEach(link => {
+    
+      // Compara el atributo 'href' del enlace con el nombre de la página actual
+      // Si coinciden, significa que este enlace apunta a la página actual
+      if (link.getAttribute('href') === currentPage) {
+          
+          // Agrega la clase 'active' al enlace para que tenga los estilos definidos para el enlace activo
+          link.classList.add('active');
+      }
+  });
+});
