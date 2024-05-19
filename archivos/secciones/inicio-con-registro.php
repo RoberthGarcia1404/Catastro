@@ -18,7 +18,7 @@
     </a>
 </div>
 <div class="cuadros-tramites">
-    <a href="">
+    <a href="mis-predios.php">
         <span class="icon-container"><i class='bx bx-home-alt-2'></i></span>
         <p>Consulte sus predios</p>
     </a>

@@ -4,7 +4,7 @@
     <ul class="navbar2">
         <li><a href="inicio-con-registro.php">INICIO</a></li>
         <li><a href="">TRÁMITES Y SERVICIOS</a></li>
-        <li><a href="">MIS PREDIOS</a></li>
+        <li><a href="mis-predios.php">MIS PREDIOS</a></li>
         <li><a href="">MIS TRÁMITES</a></li>
     </ul>
 
