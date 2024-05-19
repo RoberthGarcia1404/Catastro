@@ -5,6 +5,7 @@
   <section class="contenedor-parrafo">
     <p class="parrafo-estilo">
       A continuación, ingresa tus datos. Estos deben ser diligenciados tal y como aparecen en tu documento de identidad.
+      <br>
       Los campos marcados con * son obligatorios.
     </p>
   </section>
