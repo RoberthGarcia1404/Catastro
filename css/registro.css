@@ -6,7 +6,7 @@
 
 .country-select .selected-flag {
   width: 100%; /* Asegura que el contenedor de la bandera seleccionada ocupe el 100% del contenedor padre */
-  padding: 10px; /* Relleno interno para el contenedor de la bandera seleccionada */
+  padding: 0.625rem; /* Relleno interno para el contenedor de la bandera seleccionada */
   display: flex;
   align-items: center;
   border-radius: 0.5rem; /* Bordes redondeados */
@@ -21,7 +21,7 @@
   max-width: 80rem; /* Ancho máximo */
   background-color: #f9f9f9; /* Fondo gris claro */
   border-radius: 0.8rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra más suave */
   padding: 2rem; /* Aumenta el relleno */
 }
 
@@ -43,7 +43,6 @@
   margin-bottom: 1.5rem; /* Margen inferior */
 }
 
-
 /* Estilos para los campos de tipo text, email, tel, fecha y select */
 input[type="text"],
 input[type="email"],
@@ -53,7 +52,7 @@ input[type="pais"],
 select {
   width: 100%; /* Ancho completo */
   padding: 0.75rem; /* Relleno interno */
-  border: 1px solid #ccc; /* Borde gris */
+  border: 0.0625rem solid #ccc; /* Borde gris */
   border-radius: 0.5rem; /* Bordes redondeados */
   box-sizing: border-box; /* Incluye el borde y el relleno en el ancho total */
   transition: border-color 0.3s ease; /* Transición suave para el borde */
@@ -123,7 +122,7 @@ select:focus {
 }
 
 /* Media query para pantallas más pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   /* Ajuste para los contenedores de registro */
   .registro-izquierda, .registro-derecha {
     padding: 0;
@@ -180,17 +179,17 @@ select:focus {
 }
 
 .iti__flag-container {
-  padding-right: 10px;
+  padding-right: 0.625rem;
 }
 
 .iti__selected-flag .iti__flag {
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 
 .iti__country-name {
-  margin-left: 20px;
+  margin-left: 1.25rem;
 }
 
 .iti__dial-code {
-  margin-left: 5px;
+  margin-left: 0.3125rem;
 }
