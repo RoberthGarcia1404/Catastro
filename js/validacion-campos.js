@@ -29,10 +29,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+  
 
 
 
 
 
+
+
+  $(document).ready(function() {
+    $("#pais").countrySelect({
+        defaultCountry: "co",
+        responsiveDropdown: true
+    });
+});
 
 
