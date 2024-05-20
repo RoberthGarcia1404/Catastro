@@ -89,7 +89,7 @@
         Servicio catastral permanente, oportuno y con todos los estandares de
         calidad y tecnologia a la ciudadania.
       </p>
-      <a href="Login y Registro/Inicio_De_Sesion.html" target="_blank" class="btn btn1">Iniciar Sesion</a>
+      <a href="archivos/secciones/inicioSesion.php" target="_blank" class="btn btn1">Iniciar Sesion</a>
     </div>
   </section>
 
