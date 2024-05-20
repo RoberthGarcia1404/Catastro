@@ -17,6 +17,8 @@ td {
   text-align: center;
   padding: 8px;
   font-size: 1.09rem;
+  width: 100%;
+
 }
 
 th {
@@ -25,6 +27,7 @@ th {
   text-align: center;
   padding: 0.8rem;
   font-weight: 400;
+
 }
 
 tr:nth-child(even) {
@@ -47,4 +50,9 @@ tr:hover {
 .icono-descarga i:hover {
     transform: scale(1.07); /* Escala */
     transition: 0.2s linear; 
+}
+
+.contenedor-tablas{
+  margin: 2rem 1.8rem;
+
 }

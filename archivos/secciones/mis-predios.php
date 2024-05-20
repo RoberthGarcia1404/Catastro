@@ -5,7 +5,7 @@
 <section style="margin-top:-15px;">
     <h3 class="titulo-tramites titulos-principales">Consultar Predios</h3>
     <p class=" parrafos-principales" style="margin-top:-1.5rem; font-size: 1.14rem;">A continuación podrá consultar los predios que tiene asociados.</p>
-    <div class="grid-tramites">
+    <div class="contenedor-tablas">
         <table>
             <thead>
                 <tr>
