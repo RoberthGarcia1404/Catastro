@@ -43,11 +43,6 @@
   margin-bottom: 1.5rem; /* Margen inferior */
 }
 
-/* Estilo para las etiquetas de los campos */
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
 
 /* Estilos para los campos de tipo text, email, tel, fecha y select */
 input[type="text"],
