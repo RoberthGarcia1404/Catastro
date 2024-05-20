@@ -5,7 +5,7 @@
 <section style="margin-top:-15px;">
     <h3 class="titulo-tramites titulos-principales">Consultar Predios</h3>
     <p class=" parrafos-principales" style="margin-top:-1.5rem; font-size: 1.14rem;">A continuación podrá consultar los predios que tiene asociados.</p>
-    <div class="grid-tramites">
+    <div class="contenedor-tablas">
         <table>
             <thead>
                 <tr>
@@ -28,10 +28,10 @@
                     <td>C 38 9 92</td>
                     <td class="accion-iconos-tabla">
                         <span>
-                            <a href="" title="Ver detalle"><i class='bx bx-search-alt-2'></i></a>
+                            <a href="detalles-predios.php" title="Ver detalle"><i class='bx bx-search-alt-2'></i></a>
 
                         </span>
-                        <a href=" " title="Crear Tramite"><i class='bx bxs-add-to-queue'></i></a>
+                             <a href=" " title="Crear Tramite"><i class='bx bxs-add-to-queue'></i></a>
                         </span>
 
                     </td>
