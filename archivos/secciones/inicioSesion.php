@@ -2,7 +2,7 @@
 
 
 
-<section class="margen-superior-section grid imagen-fondo">
+<section style="padding-bottom: 5rem;" class="margen-superior-section grid imagen-fondo">
 
     <div class="contenedor-informacion">
         <h2 class="titulo">Bienvenido al Servicio de Autenticación Digital</h2>
