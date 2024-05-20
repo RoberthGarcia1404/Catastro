@@ -38,6 +38,7 @@
     input[type="email"],
     input[type="tel"],
     input[type="date"],
+    input[type="pais"],
     select {
       width: 100%; /* Ancho completo */
       padding: 0.75rem; /* Relleno interno */
@@ -175,3 +176,6 @@
     .iti__dial-code {
       margin-left: 5px;
     }
+
+
+    

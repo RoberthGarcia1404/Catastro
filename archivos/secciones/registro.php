@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.0/css/countrySelect.min.css" />
+
+
 <?php include_once 'header.php'; ?>
 
 <section style="margin-top:4rem;">
@@ -66,19 +69,28 @@
           <input type="email" id="confirmar_correo" name="confirmar_correo" required>
           <span class="error" id="confirmar-correo-error">Este campo es obligatorio.</span>
         </div>
+
+        
         <div class="campo">
           <label for="telefono">Número de Celular *</label>
           <input type="tel" id="telefono" name="telefono" required>
           <span class="error" id="phone-error">Ingrese un número de teléfono válido</span>
         </div>
+
+
+
         <div class="campo">
-          <label for="pais">País *</label>
-          <select id="pais" name="pais" required>
-            <option value="colombia" selected>Colombia</option>
-            <option value="otro">Otro</option>
-          </select>
-          <span class="error" id="pais-error">Este campo es obligatorio.</span>
+
+                    <label for="pais">País *</label>
+                    <input id="pais" name="pais" type="text" required>
+                    <span class="error" id="pais-error">Este campo es obligatorio.</span>
+
+
         </div>
+
+
+
+
         <div class="campo">
         <label for="departamento">Departamento *</label>
           <select id="departamento" name="cepartamentp" required>
@@ -117,3 +129,14 @@
 <!-- JS del plugin intl-tel-input -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 <script src="../../js/validacion-campos.js"></script>
+<!-- Incluir bibliotecas JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.0/js/countrySelect.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#pais").countrySelect({
+                defaultCountry: "co",
+                responsiveDropdown: true
+            });
+        });
+    </script>
