@@ -28,10 +28,10 @@
                     <td>C 38 9 92</td>
                     <td class="accion-iconos-tabla">
                         <span>
-                            <a href="" title="Ver detalle"><i class='bx bx-search-alt-2'></i></a>
+                            <a href="detalles-predios.php" title="Ver detalle"><i class='bx bx-search-alt-2'></i></a>
 
                         </span>
-                        <a href=" " title="Crear Tramite"><i class='bx bxs-add-to-queue'></i></a>
+                             <a href=" " title="Crear Tramite"><i class='bx bxs-add-to-queue'></i></a>
                         </span>
 
                     </td>
