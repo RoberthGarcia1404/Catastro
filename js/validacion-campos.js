@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 'primer_nombre', errorId: 'nombre-error' },
         { id: 'primer_apellido', errorId: 'apellido-error' },
         { id: 'correo', errorId: 'correo-error' },
-        { id: 'confirmar_correo', errorId: 'new-correo-error' },
+        { id: 'confirmar_correo', errorId: 'confirmacion-correo-error' },
         { id: 'telefono', errorId: 'phone-error' },
         { id: 'departamento', errorId: 'departamento-error' },
         { id: 'municipio', errorId: 'municipio-error' },
