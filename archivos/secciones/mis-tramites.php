@@ -9,21 +9,21 @@
     <table style="white-space: normal;">
         <thead>
             <tr>
-                <th style="width: 10%;">Trámite</th>
+                <th style="width: 40%;">Trámite</th>
                 <th style="width: 20%;">Estado</th>
-                <th>Fecha</th>
-                <th>Radicado</th>
-                <th>Número predial</th>
+                <th style="width: 10%;">Fecha</th>
+                <th style="width: 20%;" >Radicado</th>
+                <th style="width: 10%;">Número predial</th>
                 <th>Motivo de devolución</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="width: 20%;">Cambio de propietario o poseedor - Mutacion de primera clase</td>
-                <td>Para asignación</td>
-                <td>25/03/2021</td>
-                <td>6003-2021-0000006-ER-000</td>
-                <td>[130010101000010800150000000000]</td>
+                <td style="width: 40%;">Cambio de propietario o poseedor - Mutacion de primera clase</td>
+                <td style="width: 20%;">Para asignación</td>
+                <td style="width: 10%;">25/03/2024</td>
+                <td style="width: 20%;">6003-2021-0000006-ER-000</td>
+                <td style="width: 10%;">13001010100001080015</td>
                 <td></td>
             </tr>
         </tbody>
