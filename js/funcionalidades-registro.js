@@ -31,16 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Llamar a la función al cargar la página para establecer el estado inicial correcto
   toggleVereda();
 
-
-
-
-
-
-
-
 });
-
-
 
 
 
