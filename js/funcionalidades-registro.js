@@ -10,7 +10,29 @@ document.addEventListener("DOMContentLoaded", function () {
   if (initialCountry === "co") {
     loadColombianDepartments();
   }
+
+
+// Check box vereda
+  var checkbox = document.getElementById('zona_rural');
+  var veredaContainer = document.querySelector('.vereda-container'); // Asegúrate de que apunta al contenedor que incluye tanto el label como el input
+
+  // Función para controlar la visibilidad del contenedor de "vereda"
+  function toggleVereda() {
+      if (checkbox.checked) {
+          veredaContainer.style.display = 'block';
+      } else {
+          veredaContainer.style.display = 'none';
+      }
+  }
+
+  // Agregar listener al checkbox
+  checkbox.addEventListener('change', toggleVereda);
+
+  // Llamar a la función al cargar la página para establecer el estado inicial correcto
+  toggleVereda();
 });
+
+
 
 // Inicializa el campo de número de teléfono
 function initializePhoneNumberInput() {
@@ -139,9 +161,6 @@ function resetDepartmentAndMunicipalitySelectors() {
     .html('<option value="">Seleccione un municipio</option>');
 }
 
-
-
-// Check box vereda
 
 
 
