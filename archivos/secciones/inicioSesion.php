@@ -32,10 +32,11 @@
             <option value="cedulaCiudadania">Cédula de ciudadanía</option>
             <option value="cedulaExtranjeria">Cédula de extranjería</option>
             <option value="permisoEspecialPermanencia">Permiso especial de permanencia</option>
+            <option value="permisoProteccion">Permiso de Protección Temporal</option>
         </select>
 
         <label for="identificacion" id="identificacionLabel">Cédula de ciudadanía*</label>
-        <input type="text" id="identificacion" name="identificacion" required>
+        <input type="number" id="identificacion" name="identificacion" required>
 
         <label for="password">Contraseña*</label>
         <input type="password" id="password" name="password" required>
