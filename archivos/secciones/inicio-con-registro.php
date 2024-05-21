@@ -24,7 +24,7 @@
     </a>
 </div>
 <div class="cuadros-tramites">
-    <a href="">
+    <a href="mis-tramites.php">
         <span class="icon-container"><i class='bx bx-receipt'></i></span>
         <p>Consulte aquí sus trámites</p>
     </a>

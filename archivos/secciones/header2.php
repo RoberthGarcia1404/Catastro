@@ -5,7 +5,7 @@
         <li><a href="inicio-con-registro.php">INICIO</a></li>
         <li><a href="">TRÁMITES Y SERVICIOS</a></li>
         <li><a href="mis-predios.php">MIS PREDIOS</a></li>
-        <li><a href="">MIS TRÁMITES</a></li>
+        <li><a href="mis-tramites.php">MIS TRÁMITES</a></li>
     </ul>
 
     <!-- contenedor del numero de cedula del usuario y submenu para cerrar sesion -->
