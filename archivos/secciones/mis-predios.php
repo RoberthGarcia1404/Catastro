@@ -25,7 +25,7 @@
                     <td>129</td>
                     <td>182</td>
                     <td>060-37835</td>
-                    <td>C 38 9 92</td>
+                    <td>Cra 9 #19-27</td>
                     <td class="accion-iconos-tabla">
                         <span>
                             <a href="detalles-predios.php" title="Ver detalle"><i class='bx bx-search-alt-2'></i></a>

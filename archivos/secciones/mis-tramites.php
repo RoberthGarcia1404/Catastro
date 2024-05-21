@@ -6,11 +6,11 @@
     <h3 class="titulo-tramites titulos-principales">Consultar Trámites</h3>
     <p class=" parrafos-principales" style="margin-top:-1.5rem; font-size: 1.14rem;">A continuación podrá consultar los trámites que tiene asociados.</p>
     <div class="contenedor-tablas">
-    <table>
+    <table style="white-space: normal;">
         <thead>
             <tr>
-                <th style="width: 20%;">Trámite</th>
-                <th>Estado</th>
+                <th style="width: 10%;">Trámite</th>
+                <th style="width: 20%;">Estado</th>
                 <th>Fecha</th>
                 <th>Radicado</th>
                 <th>Número predial</th>
