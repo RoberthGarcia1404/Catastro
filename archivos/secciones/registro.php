@@ -144,6 +144,7 @@
 <script src="../../js/validacion-campos.js"></script>
 <script src="../../js/funcionalidades-registro.js"></script>
 
+<<<<<<< HEAD
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var checkbox = document.getElementById('zona_rural');
@@ -165,3 +166,6 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleVereda();
 });
 </script>
+=======
+
+>>>>>>> c57d404238a23de14dc81901da3069753f6b9c4d
