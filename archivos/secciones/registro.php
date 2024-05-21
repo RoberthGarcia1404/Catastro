@@ -30,8 +30,8 @@
 
           <div class="campo">
             <label for="numero-documento">Número de identificación *</label>
-            <input type="text" id="numero-documento" name="numero-documento" required>
-            <span class="error" id="nombre-error">Este campo es obligatorio.</span>
+            <input type="number" id="numero-documento" name="numero-documento" required>
+            <span class="error" id="documento-error">Este campo es obligatorio.</span>
           </div>
 
           <div class="campo">
@@ -83,7 +83,7 @@
           <div class="campo">
             <label for="confirmar_correo">Confirmar Correo Electrónico *</label>
             <input type="email" id="confirmar_correo" name="confirmar_correo" required>
-            <span class="error" id="correo-error">Este campo es obligatorio.</span>
+            <span class="error" id="new-correo-error">Este campo es obligatorio.</span>
             <span class="error" id="confirmar-correo-error"></span>
           </div>
 
