@@ -43,6 +43,12 @@
   margin-bottom: 1.5rem; /* Margen inferior */
 }
 
+input[type="number"]::-webkit-inner-spin-button, 
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
 /* Estilos para los campos de tipo text, email, tel, fecha y select */
 input[type="text"],
 input[type="email"],
