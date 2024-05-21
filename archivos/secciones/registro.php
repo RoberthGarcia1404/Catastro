@@ -23,7 +23,6 @@
               <option value="permiso_permanencia">Permiso Especial de Permanencia</option>
               <option value="permiso_proteccion">Permiso de Protección Temporal</option>
             </select>
-            <span class="error" id="identificacion-error">Este campo es obligatorio.</span>
           </div>
 
 
@@ -83,7 +82,7 @@
           <div class="campo">
             <label for="confirmar_correo">Confirmar Correo Electrónico *</label>
             <input type="email" id="confirmar_correo" name="confirmar_correo" required>
-            <span class="error" id="new-correo-error">Este campo es obligatorio.</span>
+            <span class="error" id="confirmacion-correo-error">Este campo es obligatorio.</span>
             <span class="error" id="confirmar-correo-error"></span>
           </div>
 
@@ -97,7 +96,6 @@
           <div class="campo">
             <label for="pais">País *</label>
             <input id="pais" name="pais" type="text" required>
-            <span class="error" id="pais-error">Este campo es obligatorio.</span>
           </div>
           <div class="campo">
             <label for="departamento">Departamento *</label>
