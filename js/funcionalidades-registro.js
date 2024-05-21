@@ -217,3 +217,39 @@ confirmarCorreo.addEventListener('input', validarCorreos);
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Lista de campos requeridos y sus mensajes de error asociados
+  var camposRequeridos = [
+      { id: 'tipo_identificacion', errorId: 'identificacion-error' },
+      { id: 'numero-documento', errorId: 'nombre-error' },
+      { id: 'fecha_expedicion', errorId: 'fecha-error' },
+      { id: 'primer_nombre', errorId: 'nombre-error' },
+      { id: 'primer_apellido', errorId: 'apellido-error' },
+      { id: 'correo', errorId: 'correo-error' },
+      { id: 'confirmar_correo', errorId: 'correo-error' },
+      { id: 'telefono', errorId: 'phone-error' },
+      { id: 'pais', errorId: 'pais-error' },
+      { id: 'departamento', errorId: 'departamento-error' },
+      { id: 'municipio', errorId: 'municipio-error' },
+      { id: 'direccion-domicilio', errorId: 'direccion-error' } // Asegúrate de que existe este ID en tu HTML
+  ];
+
+  camposRequeridos.forEach(function(campo) {
+      var inputElement = document.getElementById(campo.id);
+      var errorElement = document.getElementById(campo.errorId);
+
+      if (inputElement && errorElement) {
+          inputElement.addEventListener('input', function() {
+              if (inputElement.value.trim() !== '') {
+                  errorElement.style.display = 'none';
+              } else {
+                  errorElement.style.display = 'block';
+              }
+          });
+      }
+  });
+});
+
+
+
+
