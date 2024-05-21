@@ -30,7 +30,7 @@
 
           <div class="campo">
             <label for="numero-documento">Número de identificación *</label>
-            <input type="text" id="numero-documento" name="numero-documento" required>
+            <input type="number" id="numero-documento" name="numero-documento" required>
             <span class="error" id="documento-error">Este campo es obligatorio.</span>
           </div>
 

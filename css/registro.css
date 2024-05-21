@@ -49,6 +49,7 @@ input[type="email"],
 input[type="tel"],
 input[type="date"],
 input[type="pais"],
+input[type="number"],
 select {
   width: 100%; /* Ancho completo */
   padding: 0.75rem; /* Relleno interno */
@@ -62,6 +63,7 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
 input[type="date"]:focus,
+input[type="number"]:focus,
 select:focus {
   border-color: #194e9a; /* Borde azul en foco */
   outline: none; /* Sin borde de enfoque */
