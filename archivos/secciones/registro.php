@@ -116,6 +116,12 @@
             <label for="zona_rural">¿Vives en Zona Rural?</label>
             <input type="checkbox" id="zona_rural" name="zona_rural">
           </div>
+
+          <div class="vereda-container" style="display: none;">
+    <label for="vereda">Nombre de la Vereda</label>
+    <input type="text" id="vereda" name="vereda">
+</div>
+
         </form>
       </div>
     </div>
@@ -139,64 +145,23 @@
 <script src="../../js/funcionalidades-registro.js"></script>
 
 <script>
-    // Inicializar el selector de país
-    $(document).ready(function() {
-        $("#pais").countrySelect({
-            defaultCountry: "co",
-            responsiveDropdown: true
-        });
+document.addEventListener('DOMContentLoaded', function () {
+    var checkbox = document.getElementById('zona_rural');
+    var veredaContainer = document.querySelector('.vereda-container'); // Asegúrate de que apunta al contenedor que incluye tanto el label como el input
 
-        // Escuchar cambios en el selector de país
-        $('#pais').on('change', function() {
-            const selectedCountry = $('#pais').countrySelect('getSelectedCountryData').iso2;
-            if (selectedCountry === 'co') {
-                // Cargar departamentos y municipios de Colombia
-                loadColombianDepartments();
-            } else {
-                // Deshabilitar los selectores de departamento y municipio
-                $('#departamento').prop('disabled', true).html('<option value="">Seleccione un departamento</option>');
-                $('#municipio').prop('disabled', true).html('<option value="">Seleccione un municipio</option>');
-            }
-        });
+    // Función para controlar la visibilidad del contenedor de "vereda"
+    function toggleVereda() {
+        if (checkbox.checked) {
+            veredaContainer.style.display = 'block';
+        } else {
+            veredaContainer.style.display = 'none';
+        }
+    }
 
-        // Función para cargar departamentos y municipios de Colombia
-        const loadColombianDepartments = async () => {
-            try {
-                const response = await fetch('https://www.datos.gov.co/resource/xdk5-pm3f.json');
-                const data = await response.json();
+    // Agregar listener al checkbox
+    checkbox.addEventListener('change', toggleVereda);
 
-                const departments = [...new Set(data.map(item => item.departamento))];
-                const municipalitiesByDepartment = {};
-
-                departments.forEach(department => {
-                    municipalitiesByDepartment[department] = data
-                        .filter(item => item.departamento === department)
-                        .map(item => item.municipio);
-                });
-
-                // Llenar el selector de departamentos
-                $('#departamento').html('<option value="">Seleccione un departamento</option>');
-                departments.forEach(department => {
-                    $('#departamento').append(`<option value="${department}">${department}</option>`);
-                });
-                $('#departamento').prop('disabled', false);
-
-                // Escuchar cambios en el selector de departamentos
-                $('#departamento').on('change', function() {
-                    const selectedDepartment = $(this).val();
-                    $('#municipio').html('<option value="">Seleccione un municipio</option>');
-                    if (municipalitiesByDepartment[selectedDepartment]) {
-                        municipalitiesByDepartment[selectedDepartment].forEach(municipality => {
-                            $('#municipio').append(`<option value="${municipality}">${municipality}</option>`);
-                        });
-                        $('#municipio').prop('disabled', false);
-                    } else {
-                        $('#municipio').prop('disabled', true);
-                    }
-                });
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-    });
+    // Llamar a la función al cargar la página para establecer el estado inicial correcto
+    toggleVereda();
+});
 </script>

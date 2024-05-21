@@ -138,3 +138,11 @@ function resetDepartmentAndMunicipalitySelectors() {
     .prop("disabled", true)
     .html('<option value="">Seleccione un municipio</option>');
 }
+
+
+
+// Check box vereda
+
+
+
+
