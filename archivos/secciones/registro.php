@@ -124,9 +124,9 @@
           </div>
 
           <div class="vereda-container" style="display: none;">
-    <label for="vereda">Nombre de la Vereda</label>
-    <input type="text" id="vereda" name="vereda">
-</div>
+            <label for="vereda">Nombre de la Vereda</label>
+            <input type="text" id="vereda" name="vereda">
+          </div>
 
         </form>
       </div>
@@ -149,4 +149,3 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.0/js/countrySelect.min.js"></script>
 <script src="../../js/validacion-campos.js"></script>
 <script src="../../js/funcionalidades-registro.js"></script>
-
