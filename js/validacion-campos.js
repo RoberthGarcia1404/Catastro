@@ -1,26 +1,26 @@
 // --------------------------VALIDACION DE CORREOS--------------------------------------
 
-document.getElementById('form-registro').addEventListener('submit', function(event) {
+document.getElementById('form-registro').addEventListener('submit', function (event) {
     // Refresca la validación de correos para asegurar que se capturan cambios de último momento
     validarCorreos();
-  
+
     var correo = document.getElementById('correo');
     var confirmarCorreo = document.getElementById('confirmar_correo');
     var errorMensaje = document.getElementById('confirmar-correo-error');
-  
+
     // Verificar que los correos coincidan antes de permitir el envío del formulario
     if (correo.value !== confirmarCorreo.value) {
         errorMensaje.style.display = 'block'; // Asegura que el mensaje de error sea visible
         event.preventDefault(); // Detiene el envío del formulario
     }
-  });
-  
-  // Función de validación de correos
-  function validarCorreos() {
+});
+
+// Función de validación de correos
+function validarCorreos() {
     var correo = document.getElementById('correo');
     var confirmarCorreo = document.getElementById('confirmar_correo');
     var errorMensaje = document.getElementById('confirmar-correo-error');
-  
+
     if (correo.value.trim() && confirmarCorreo.value.trim()) {
         if (correo.value !== confirmarCorreo.value) {
             errorMensaje.style.display = 'block'; // Muestra el mensaje de error
@@ -31,14 +31,14 @@ document.getElementById('form-registro').addEventListener('submit', function(eve
     } else {
         errorMensaje.style.display = 'none'; // Oculta el mensaje de error si alguno de los campos está vacío
     }
-  }
-  
-  // Agrega listeners a ambos campos de correo electrónico
-  var correo = document.getElementById('correo');
-  var confirmarCorreo = document.getElementById('confirmar_correo');
-  correo.addEventListener('input', validarCorreos);
-  confirmarCorreo.addEventListener('input', validarCorreos);
-  
+}
+
+// Agrega listeners a ambos campos de correo electrónico
+var correo = document.getElementById('correo');
+var confirmarCorreo = document.getElementById('confirmar_correo');
+correo.addEventListener('input', validarCorreos);
+confirmarCorreo.addEventListener('input', validarCorreos);
+
 
 
 // ----------------------VALIDACION DE CAMPOS------------------------------------------
@@ -60,13 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 'municipio', errorId: 'municipio-error' },
         { id: 'direccion-domicilio', errorId: 'direccion-error' } // Asegúrate de que existe este ID en tu HTML
     ];
-  
-    camposRequeridos.forEach(function(campo) {
+
+    camposRequeridos.forEach(function (campo) {
         var inputElement = document.getElementById(campo.id);
         var errorElement = document.getElementById(campo.errorId);
-  
+
         if (inputElement && errorElement) {
-            inputElement.addEventListener('input', function() {
+            inputElement.addEventListener('input', function () {
                 if (inputElement.value.trim() !== '') {
                     errorElement.style.display = 'none';
                 } else {
@@ -75,4 +75,4 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     });
-  });
+});
