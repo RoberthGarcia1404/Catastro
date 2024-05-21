@@ -84,7 +84,7 @@
             <label for="confirmar_correo">Confirmar Correo Electrónico *</label>
             <input type="email" id="confirmar_correo" name="confirmar_correo" required>
             <span class="error" id="correo-error">Este campo es obligatorio.</span>
-            <span class="error" id="confirmar-correo-error">Verifique que el correo electronico corresponda.</span>
+            <span class="error" id="confirmar-correo-error"></span>
           </div>
 
 

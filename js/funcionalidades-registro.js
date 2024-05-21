@@ -38,29 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-// Check verificacion correo electronico
-
-
-  var correo = document.getElementById('correo');
-  var confirmarCorreo = document.getElementById('confirmar_correo');
-  var errorMensaje = document.getElementById('confirmar-correo-error');
-
-  function validarCorreos() {
-      if (correo.value.trim() && confirmarCorreo.value.trim()) {
-          if (correo.value !== confirmarCorreo.value) {
-              errorMensaje.style.display = 'block'; // Muestra el mensaje de error
-          } else {
-              errorMensaje.style.display = 'none'; // Oculta el mensaje de error
-          }
-      } else {
-          errorMensaje.style.display = 'none'; // Oculta el mensaje de error si alguno de los campos está vacío
-      }
-  }
-
-  // Agrega listeners a ambos campos de correo electrónico
-  correo.addEventListener('input', validarCorreos);
-  confirmarCorreo.addEventListener('input', validarCorreos);
 });
 
 
@@ -195,6 +172,48 @@ function resetDepartmentAndMunicipalitySelectors() {
 }
 
 
+
+
+
+
+document.getElementById('form-registro').addEventListener('submit', function(event) {
+  // Refresca la validación de correos para asegurar que se capturan cambios de último momento
+  validarCorreos();
+
+  var correo = document.getElementById('correo');
+  var confirmarCorreo = document.getElementById('confirmar_correo');
+  var errorMensaje = document.getElementById('confirmar-correo-error');
+
+  // Verificar que los correos coincidan antes de permitir el envío del formulario
+  if (correo.value !== confirmarCorreo.value) {
+      errorMensaje.style.display = 'block'; // Asegura que el mensaje de error sea visible
+      event.preventDefault(); // Detiene el envío del formulario
+  }
+});
+
+// Función de validación de correos
+function validarCorreos() {
+  var correo = document.getElementById('correo');
+  var confirmarCorreo = document.getElementById('confirmar_correo');
+  var errorMensaje = document.getElementById('confirmar-correo-error');
+
+  if (correo.value.trim() && confirmarCorreo.value.trim()) {
+      if (correo.value !== confirmarCorreo.value) {
+          errorMensaje.style.display = 'block'; // Muestra el mensaje de error
+          errorMensaje.textContent = "Verifica que los Correos Electronicos Coincidan"; // Mensaje de error personalizado
+      } else {
+          errorMensaje.style.display = 'none'; // Oculta el mensaje de error
+      }
+  } else {
+      errorMensaje.style.display = 'none'; // Oculta el mensaje de error si alguno de los campos está vacío
+  }
+}
+
+// Agrega listeners a ambos campos de correo electrónico
+var correo = document.getElementById('correo');
+var confirmarCorreo = document.getElementById('confirmar_correo');
+correo.addEventListener('input', validarCorreos);
+confirmarCorreo.addEventListener('input', validarCorreos);
 
 
 
