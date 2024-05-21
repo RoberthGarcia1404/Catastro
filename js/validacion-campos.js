@@ -49,7 +49,6 @@ document.getElementById('form-registro').addEventListener('submit', function(eve
 document.addEventListener("DOMContentLoaded", function () {
     // Lista de campos requeridos y sus mensajes de error asociados
     var camposRequeridos = [
-        { id: 'tipo_identificacion', errorId: 'identificacion-error' },
         { id: 'numero-documento', errorId: 'documento-error' },
         { id: 'fecha_expedicion', errorId: 'fecha-error' },
         { id: 'primer_nombre', errorId: 'nombre-error' },
@@ -57,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 'correo', errorId: 'correo-error' },
         { id: 'confirmar_correo', errorId: 'new-correo-error' },
         { id: 'telefono', errorId: 'phone-error' },
-        { id: 'pais', errorId: 'pais-error' },
         { id: 'departamento', errorId: 'departamento-error' },
         { id: 'municipio', errorId: 'municipio-error' },
         { id: 'direccion-domicilio', errorId: 'direccion-error' } // Asegúrate de que existe este ID en tu HTML
