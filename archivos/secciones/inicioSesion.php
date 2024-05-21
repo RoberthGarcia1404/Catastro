@@ -32,7 +32,7 @@
             <option value="cedulaCiudadania">Cédula de ciudadanía</option>
             <option value="cedulaExtranjeria">Cédula de extranjería</option>
             <option value="permisoEspecialPermanencia">Permiso especial de permanencia</option>
-            <option value="permisoProteccion">Permiso de Protección Temporal</option>
+            <option value="permisoProteccionTemporal">Permiso de protección temporal</option>
         </select>
 
         <label for="identificacion" id="identificacionLabel">Cédula de ciudadanía*</label>
@@ -59,8 +59,11 @@
         } else if (tipoAcceso === "permisoEspecialPermanencia") {
             identificacionLabel.textContent = "Permiso especial de permanencia*";
         }
-    }
-
+        else if (tipoAcceso === "permisoProteccionTemporal") {
+            identificacionLabel.textContent = "Permiso de protección temporal*";
+        
+         }
+        }
     // Llamamos a la función para que se ejecute al cargar la página por si el usuario selecciona algo antes de cargar el script
     cambiarTextoIdentificador();
 </script>
