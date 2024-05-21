@@ -70,7 +70,11 @@
       </div>
 
       <div class="registro-derecha">
+
         <form id="form-registro">
+
+
+
           <div class="campo">
             <label for="correo">Correo Electrónico *</label>
             <input type="email" id="correo" name="correo" required>
@@ -80,8 +84,11 @@
             <label for="confirmar_correo">Confirmar Correo Electrónico *</label>
             <input type="email" id="confirmar_correo" name="confirmar_correo" required>
             <span class="error" id="correo-error">Este campo es obligatorio.</span>
-            <span class="error" id="confirmar-correo-error">Verifica que el correo electronico corresponda</span>
+            <span class="error" id="confirmar-correo-error">Verifique que el correo electronico corresponda.</span>
           </div>
+
+
+
           <div class="campo">
             <label for="telefono">Número de Celular *</label>
             <input type="tel" id="telefono" name="telefono" required>
@@ -145,25 +152,3 @@
 <script src="../../js/validacion-campos.js"></script>
 <script src="../../js/funcionalidades-registro.js"></script>
 
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var checkbox = document.getElementById('zona_rural');
-    var veredaContainer = document.querySelector('.vereda-container'); // Asegúrate de que apunta al contenedor que incluye tanto el label como el input
-
-    // Función para controlar la visibilidad del contenedor de "vereda"
-    function toggleVereda() {
-        if (checkbox.checked) {
-            veredaContainer.style.display = 'block';
-        } else {
-            veredaContainer.style.display = 'none';
-        }
-    }
-
-    // Agregar listener al checkbox
-    checkbox.addEventListener('change', toggleVereda);
-
-    // Llamar a la función al cargar la página para establecer el estado inicial correcto
-    toggleVereda();
-});
-</script>

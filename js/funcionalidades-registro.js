@@ -30,7 +30,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Llamar a la función al cargar la página para establecer el estado inicial correcto
   toggleVereda();
+
+
+
+
+
+
+
+
+
+// Check verificacion correo electronico
+
+
+  var correo = document.getElementById('correo');
+  var confirmarCorreo = document.getElementById('confirmar_correo');
+  var errorMensaje = document.getElementById('confirmar-correo-error');
+
+  function validarCorreos() {
+      if (correo.value.trim() && confirmarCorreo.value.trim()) {
+          if (correo.value !== confirmarCorreo.value) {
+              errorMensaje.style.display = 'block'; // Muestra el mensaje de error
+          } else {
+              errorMensaje.style.display = 'none'; // Oculta el mensaje de error
+          }
+      } else {
+          errorMensaje.style.display = 'none'; // Oculta el mensaje de error si alguno de los campos está vacío
+      }
+  }
+
+  // Agrega listeners a ambos campos de correo electrónico
+  correo.addEventListener('input', validarCorreos);
+  confirmarCorreo.addEventListener('input', validarCorreos);
 });
+
+
 
 
 

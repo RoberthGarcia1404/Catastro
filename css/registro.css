@@ -171,6 +171,7 @@ select:focus {
   margin-top: 0rem;
   font-size: 0.7rem; /* Tamaño de fuente */
   color: #dc3545; /* Color del texto */
+  display: none;
 }
 
 /* Estilo personalizado para el campo de teléfono */
