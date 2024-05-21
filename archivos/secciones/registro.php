@@ -25,6 +25,15 @@
             </select>
             <span class="error" id="identificacion-error">Este campo es obligatorio.</span>
           </div>
+
+
+
+          <div class="campo">
+            <label for="numero-documento">Numero de Documento *</label>
+            <input type="text" id="numero-documento" name="numero-documento" required>
+            <span class="error" id="nombre-error">Este campo es obligatorio.</span>
+          </div>
+
           <div class="campo">
             <label for="fecha_expedicion">Fecha de Expedición *</label>
             <div class="input-icon">
@@ -32,11 +41,16 @@
             </div>
             <span class="error" id="fecha-error">Este campo es obligatorio.</span>
           </div>
+
+
+
           <div class="campo">
             <label for="primer_nombre">Primer Nombre *</label>
             <input type="text" id="primer_nombre" name="primer_nombre" required>
             <span class="error" id="nombre-error">Este campo es obligatorio.</span>
           </div>
+
+
           <div class="campo">
             <label for="segundo_nombre">Segundo Nombre</label>
             <input type="text" id="segundo_nombre" name="segundo_nombre">
@@ -91,6 +105,13 @@
             </select>
             <span class="error" id="municipio-error">Este campo es obligatorio.</span>
           </div>
+
+
+          <div class="campo">
+            <label for="direccion-domicilio">Dirección de Domicilio</label>
+            <input type="text" id="direccion-domicilio" name="direccion-domicilio" required>
+          </div>
+
           <div class="campo">
             <label for="zona_rural">¿Vives en Zona Rural?</label>
             <input type="checkbox" id="zona_rural" name="zona_rural">
