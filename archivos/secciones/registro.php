@@ -133,7 +133,7 @@
     </div>
 
     <div class="botones">
-      <a href="inicioSesion.php" class="boton boton-cancelar">Cancelar</a>
+      <a href="inicioSesion.php" class="boton boton-cancelar">Regresar</a>
       <button type="submit" form="form-registro" class="boton boton-registrarse" id="submit-btn">Registrarse</button>
     </div>
   </div>
