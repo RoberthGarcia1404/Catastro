@@ -20,7 +20,7 @@
     </div>
 
     <div class="login-container">
-        <form action="procesar-login.php" method="POST" class="formulario-login" enctype="multipart/form-data">
+        <form action="../procesos/procesar-login.php" method="POST" class="formulario-login" enctype="multipart/form-data">
             <h2>Inicio de sesión</h2>
             <label for="">Los campos marcados con * son obligatorios.</label>
 
