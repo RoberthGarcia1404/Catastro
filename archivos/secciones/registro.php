@@ -65,12 +65,7 @@
             <input type="text" id="segundo_apellido" name="segundo_apellido">
             <p class="parrafo-opcional">*Si tienes segundo apellido, diligencia este campo</p>
           </div>
-        </form>
-      </div>
 
-      <div class="registro-derecha">
-
-        <form id="form-registro">
 
 
 
@@ -85,6 +80,16 @@
             <span class="error" id="confirmacion-correo-error">Este campo es obligatorio.</span>
             <span class="error" id="confirmar-correo-error"></span>
           </div>
+        </form>
+      </div>
+
+      <div class="registro-derecha">
+
+        <form id="form-registro">
+
+
+
+          
 
 
 
@@ -129,6 +134,19 @@
           </div>
 
         </form>
+
+        <div class="campo">
+            <label for="contraseña">Escribe una contraseña *</label>
+            <input type="password" id="contraseña" name="contraseña" required>
+            <span class="error" id="contraseña-error">Este campo es obligatorio.</span>
+          </div>
+
+          <div class="campo">
+            <label for="comfirmar-contraseña">Confirmar una contraseña *</label>
+            <input type="password" id="comfirmar-contraseña" name="comfirmar-contraseña" required>
+            <span class="error" id="confirmar-contraseña-error">Este campo es obligatorio.</span>
+            <span class="error" id="verificar-contraseña-error"></span>
+          </div>
       </div>
     </div>
 

@@ -39,6 +39,47 @@ var confirmarCorreo = document.getElementById('confirmar_correo');
 correo.addEventListener('input', validarCorreos);
 confirmarCorreo.addEventListener('input', validarCorreos);
 
+// --------------------------VALIDACION DE CONTRASEÑA--------------------------------------
+
+document.getElementById('form-registro').addEventListener('submit', function (event) {
+    // Refresca la validación de contraseñas para asegurar que se capturan cambios de último momento
+    validarContraseñas();
+
+    var contraseña = document.getElementById('contraseña');
+    var confirmarContraseña = document.getElementById('comfirmar-contraseña');
+    var errorMensaje = document.getElementById('verificar-contraseña-error');
+
+    // Verificar que las contraseñas coincidan antes de permitir el envío del formulario
+    if (contraseña.value !== confirmarContraseña.value) {
+        errorMensaje.style.display = 'block'; // Asegura que el mensaje de error sea visible
+        event.preventDefault(); // Detiene el envío del formulario
+    }
+});
+
+// Función de validación de contraseñas
+function validarContraseñas() {
+    var contraseña = document.getElementById('contraseña');
+    var confirmarContraseña = document.getElementById('comfirmar-contraseña');
+    var errorMensaje = document.getElementById('verificar-contraseña-error');
+
+    if (contraseña.value.trim() && confirmarContraseña.value.trim()) {
+        if (contraseña.value !== confirmarContraseña.value) {
+            errorMensaje.style.display = 'block'; // Muestra el mensaje de error
+            errorMensaje.textContent = "Las contraseñas no coinciden"; // Mensaje de error personalizado
+        } else {
+            errorMensaje.style.display = 'none'; // Oculta el mensaje de error
+        }
+    } else {
+        errorMensaje.style.display = 'none'; // Oculta el mensaje de error si alguno de los campos está vacío
+    }
+}
+
+// Agrega listeners a ambos campos de contraseña
+var contraseña = document.getElementById('contraseña');
+var confirmarContraseña = document.getElementById('comfirmar-contraseña');
+contraseña.addEventListener('input', validarContraseñas);
+confirmarContraseña.addEventListener('input', validarContraseñas);
+
 
 
 // ----------------------VALIDACION DE CAMPOS------------------------------------------
@@ -58,7 +99,9 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: 'telefono', errorId: 'phone-error' },
         { id: 'departamento', errorId: 'departamento-error' },
         { id: 'municipio', errorId: 'municipio-error' },
-        { id: 'direccion-domicilio', errorId: 'direccion-error' } // Asegúrate de que existe este ID en tu HTML
+        { id: 'direccion-domicilio', errorId: 'direccion-error' },
+        { id: 'contraseña', errorId: 'contraseña-error' },
+        { id: 'comfirmar-contraseña', errorId: 'confirmar-contraseña-error' } 
     ];
 
     camposRequeridos.forEach(function (campo) {
