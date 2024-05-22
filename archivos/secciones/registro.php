@@ -1,7 +1,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.0/css/countrySelect.min.css" />
 
-<?php include_once 'header.php'; ?>
+<?php
+session_start();
+include_once 'header.php'; 
+// Establecer el nivel de informes de errores a 0 para suprimir la visualización de errores
+ini_set('error_reporting', 0);
+?>
+
 
 <section style="margin-top:4rem;">
   <h3 class="titulos-principales">REGISTRARSE</h3>
