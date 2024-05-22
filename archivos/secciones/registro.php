@@ -16,10 +16,10 @@ include_once 'header.php';
 
   <div class="registro-contenedor">
     <div class="registro">
-      <div class="registro-izquierda">
+     
 
 
-        <form action="../procesos/registro_usuarios.php" method="post" enctype="multipart/form-data" id="form-izquierda">
+        <form action="../procesos/registro_usuarios.php" method="post" enctype="multipart/form-data" id="form-registro">
           <div class="campo">
             <label for="tipo_identificacion">Tipo de identificación *</label>
             <select id="tipo_identificacion" name="tipo_identificacion" required>
@@ -82,12 +82,10 @@ include_once 'header.php';
             <span class="error" id="confirmacion-correo-error">Este campo es obligatorio.</span>
             <span class="error" id="confirmar-correo-error"></span>
           </div>
-        </form>
-      </div>
+  
+ 
 
-      <div class="registro-derecha">
 
-        <form action="../procesos/registro_usuarios.php" method="post" enctype="multipart/form-data" id="form-registro">
           <div class="campo">
             <label for="telefono">Número de celular *</label>
             <input type="tel" id="telefono" name="telefono" required>
@@ -143,8 +141,6 @@ include_once 'header.php';
 
         </form>
 
-
-      </div>
     </div>
 
     <div class="botones">

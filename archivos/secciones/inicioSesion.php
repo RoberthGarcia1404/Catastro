@@ -1,9 +1,6 @@
 <?php include_once 'header.php'; ?>
 
-
-
 <section style="padding-bottom: 5rem;" class="margen-superior-section grid imagen-fondo">
-
     <div class="contenedor-informacion">
         <h2 class="titulo">Bienvenido al Servicio de Autenticación Digital</h2>
         <div class="contenido-lista">
@@ -23,55 +20,47 @@
     </div>
 
     <div class="login-container">
-    <form action="procesar_login.php" method="POST" class="formulario-login" enctype="multipart/form-data">
-        <h2>Inicio de sesión</h2>
-        <label for="">Los campos marcados con * son obligatorios.</label>
+        <form action="procesar-login.php" method="POST" class="formulario-login" enctype="multipart/form-data">
+            <h2>Inicio de sesión</h2>
+            <label for="">Los campos marcados con * son obligatorios.</label>
 
-        <label for="tipoAcceso">Tipo de acceso*</label>
-        <select name="tipoAcceso" id="tipoAcceso" required onchange="cambiarTextoIdentificador()">
-            <option value="cedulaCiudadania">Cédula de ciudadanía</option>
-            <option value="cedulaExtranjeria">Cédula de extranjería</option>
-            <option value="permisoEspecialPermanencia">Permiso especial de permanencia</option>
-            <option value="permisoProteccionTemporal">Permiso de protección temporal</option>
-        </select>
+            <label for="tipoAcceso">Tipo de acceso*</label>
+            <select name="tipoAcceso" id="tipoAcceso" required onchange="cambiarTextoIdentificador()">
+                <option value="cedula_ciudadania">Cédula de ciudadanía</option>
+                <option value="cedula_extranjera">Cédula de extranjería</option>
+                <option value="permiso_permanencia">Permiso especial de permanencia</option>
+                <option value="permiso_proteccion">Permiso de protección temporal</option>
+            </select>
 
-        <label for="identificacion" id="identificacionLabel">Cédula de ciudadanía*</label>
-        <input type="number" id="identificacion" name="identificacion" required>
+            <label for="identificacion" id="identificacionLabel">Cédula de ciudadanía*</label>
+            <input type="number" id="identificacion" name="identificacion" required>
 
-        <label for="password">Contraseña*</label>
-        <input type="password" id="password" name="password" required>
+            <label for="password">Contraseña*</label>
+            <input type="password" id="password" name="password" required>
 
-        <button type="submit"><a href="inicio-con-registro.php" style="color:white;">Continuar</a></button>
+            <button type="submit" name="login">Continuar</button>
 
-        <p>¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a></p>
-    </form>
-</div>
+            <p>¿No tienes cuenta? <a href="registro.php">Regístrate aquí</a></p>
+        </form>
+    </div>
 
-<script>
-    function cambiarTextoIdentificador() {
-        var tipoAcceso = document.getElementById("tipoAcceso").value;
-        var identificacionLabel = document.getElementById("identificacionLabel");
-        
-        if (tipoAcceso === "cedulaCiudadania") {
-            identificacionLabel.textContent = "Cédula de ciudadanía*";
-        } else if (tipoAcceso === "cedulaExtranjeria") {
-            identificacionLabel.textContent = "Cédula de extranjería*";
-        } else if (tipoAcceso === "permisoEspecialPermanencia") {
-            identificacionLabel.textContent = "Permiso especial de permanencia*";
+    <script>
+        function cambiarTextoIdentificador() {
+            var tipoAcceso = document.getElementById("tipoAcceso").value;
+            var identificacionLabel = document.getElementById("identificacionLabel");
+            
+            if (tipoAcceso === "cedula_ciudadania") {
+                identificacionLabel.textContent = "Cédula de ciudadanía*";
+            } else if (tipoAcceso === "cedula_extranjera") {
+                identificacionLabel.textContent = "Cédula de extranjería*";
+            } else if (tipoAcceso === "permiso_permanencia") {
+                identificacionLabel.textContent = "Permiso especial de permanencia*";
+            } else if (tipoAcceso === "permiso_proteccion") {
+                identificacionLabel.textContent = "Permiso de protección temporal*";
+            }
         }
-        else if (tipoAcceso === "permisoProteccionTemporal") {
-            identificacionLabel.textContent = "Permiso de protección temporal*";
-        
-         }
-        }
-    // Llamamos a la función para que se ejecute al cargar la página por si el usuario selecciona algo antes de cargar el script
-    cambiarTextoIdentificador();
-</script>
-
-
+        cambiarTextoIdentificador();
+    </script>
 </section>
-
-
-
 
 <?php include_once 'footer.php'; ?>
