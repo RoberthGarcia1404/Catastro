@@ -1,13 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.0/css/countrySelect.min.css" />
 
-<?php
-session_start();
-include_once 'header.php'; 
-// Establecer el nivel de informes de errores a 0 para suprimir la visualización de errores
-ini_set('error_reporting', 0);
-?>
-
+<?php include_once 'header.php'; ?>
 
 <section style="margin-top:4rem;">
   <h3 class="titulos-principales">REGISTRARSE</h3>
@@ -20,7 +14,7 @@ ini_set('error_reporting', 0);
   <div class="registro-contenedor">
     <div class="registro">
       <div class="registro-izquierda">
-        <form action="" method="post" enctype="multipart/form-data" id="form-izquierda">
+        <form id="form-izquierda">
           <div class="campo">
             <label for="tipo_identificacion">Tipo de identificación *</label>
             <select id="tipo_identificacion" name="tipo_identificacion" required>
@@ -71,15 +65,6 @@ ini_set('error_reporting', 0);
             <input type="text" id="segundo_apellido" name="segundo_apellido">
             <p class="parrafo-opcional">*Si tienes segundo apellido, diligencia este campo</p>
           </div>
-
-<<<<<<< HEAD
-=======
-      <div class="registro-derecha">
-
-        <form action="" method="post" enctype="multipart/form-data" id="form-registro">
->>>>>>> ddc458780dc0eee5886e71a3251a28781b0120d7
-
-
 
           <div class="campo">
             <label for="correo">Correo electrónico *</label>
