@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.0/css/countrySelect.min.css" />
 
-<?php include_once 'header.php'; ?>
+<?php 
+session_start();
+include_once 'header.php'; 
+?>
 
 <section style="margin-top:4rem;">
   <h3 class="titulos-principales">REGISTRARSE</h3>
@@ -14,7 +17,9 @@
   <div class="registro-contenedor">
     <div class="registro">
       <div class="registro-izquierda">
-        <form id="form-izquierda">
+
+
+        <form action="../procesos/registro_usuarios.php" method="post" enctype="multipart/form-data" id="form-izquierda">
           <div class="campo">
             <label for="tipo_identificacion">Tipo de identificación *</label>
             <select id="tipo_identificacion" name="tipo_identificacion" required>
@@ -82,14 +87,7 @@
 
       <div class="registro-derecha">
 
-        <form id="form-registro">
-
-
-
-          
-
-
-
+        <form action="../procesos/registro_usuarios.php" method="post" enctype="multipart/form-data" id="form-registro">
           <div class="campo">
             <label for="telefono">Número de celular *</label>
             <input type="tel" id="telefono" name="telefono" required>
