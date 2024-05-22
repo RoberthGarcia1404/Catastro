@@ -20,7 +20,7 @@ ini_set('error_reporting', 0);
   <div class="registro-contenedor">
     <div class="registro">
       <div class="registro-izquierda">
-        <form id="form-izquierda">
+        <form action="" method="post" enctype="multipart/form-data" id="form-izquierda">
           <div class="campo">
             <label for="tipo_identificacion">Tipo de identificación *</label>
             <select id="tipo_identificacion" name="tipo_identificacion" required>
@@ -76,7 +76,7 @@ ini_set('error_reporting', 0);
 
       <div class="registro-derecha">
 
-        <form id="form-registro">
+        <form action="" method="post" enctype="multipart/form-data" id="form-registro">
 
 
 
