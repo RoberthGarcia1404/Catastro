@@ -22,12 +22,12 @@ ini_set('error_reporting', 0);
       <div class="registro-izquierda">
         <form id="form-izquierda">
           <div class="campo">
-            <label for="tipo_identificacion">Tipo de Identificación *</label>
+            <label for="tipo_identificacion">Tipo de identificación *</label>
             <select id="tipo_identificacion" name="tipo_identificacion" required>
-              <option value="cedula_ciudadania">Cédula de Ciudadanía</option>
-              <option value="cedula_extranjera">Cédula Extranjera</option>
-              <option value="permiso_permanencia">Permiso Especial de Permanencia</option>
-              <option value="permiso_proteccion">Permiso de Protección Temporal</option>
+              <option value="cedula_ciudadania">Cédula de ciudadanía</option>
+              <option value="cedula_extranjera">Cédula extranjera</option>
+              <option value="permiso_permanencia">Permiso especial de permanencia</option>
+              <option value="permiso_proteccion">Permiso de protección temporal</option>
             </select>
           </div>
 
@@ -40,7 +40,7 @@ ini_set('error_reporting', 0);
           </div>
 
           <div class="campo">
-            <label for="fecha_expedicion">Fecha de Expedición *</label>
+            <label for="fecha_expedicion">Fecha de expedición *</label>
             <div class="input-icon">
               <input type="date" id="fecha_expedicion" name="fecha_expedicion" required>
             </div>
@@ -50,24 +50,24 @@ ini_set('error_reporting', 0);
 
 
           <div class="campo">
-            <label for="primer_nombre">Primer Nombre *</label>
+            <label for="primer_nombre">Primer nombre *</label>
             <input type="text" id="primer_nombre" name="primer_nombre" required>
             <span class="error" id="nombre-error">Este campo es obligatorio.</span>
           </div>
 
 
           <div class="campo">
-            <label for="segundo_nombre">Segundo Nombre</label>
+            <label for="segundo_nombre">Segundo nombre</label>
             <input type="text" id="segundo_nombre" name="segundo_nombre">
             <p class="parrafo-opcional">*Si tienes segundo nombre, diligencia este campo</p>
           </div>
           <div class="campo">
-            <label for="primer_apellido">Primer Apellido *</label>
+            <label for="primer_apellido">Primer apellido *</label>
             <input type="text" id="primer_apellido" name="primer_apellido" required>
             <span class="error" id="apellido-error">Este campo es obligatorio.</span>
           </div>
           <div class="campo">
-            <label for="segundo_apellido">Segundo Apellido</label>
+            <label for="segundo_apellido">Segundo apellido</label>
             <input type="text" id="segundo_apellido" name="segundo_apellido">
             <p class="parrafo-opcional">*Si tienes segundo apellido, diligencia este campo</p>
           </div>
@@ -81,12 +81,12 @@ ini_set('error_reporting', 0);
 
 
           <div class="campo">
-            <label for="correo">Correo Electrónico *</label>
+            <label for="correo">Correo electrónico *</label>
             <input type="email" id="correo" name="correo" required>
             <span class="error" id="correo-error">Este campo es obligatorio.</span>
           </div>
           <div class="campo">
-            <label for="confirmar_correo">Confirmar Correo Electrónico *</label>
+            <label for="confirmar_correo">Confirmar correo electrónico *</label>
             <input type="email" id="confirmar_correo" name="confirmar_correo" required>
             <span class="error" id="confirmacion-correo-error">Este campo es obligatorio.</span>
             <span class="error" id="confirmar-correo-error"></span>
@@ -95,7 +95,7 @@ ini_set('error_reporting', 0);
 
 
           <div class="campo">
-            <label for="telefono">Número de Celular *</label>
+            <label for="telefono">Número de celular *</label>
             <input type="tel" id="telefono" name="telefono" required>
             <span class="error" id="phone-error">Ingrese un número de teléfono válido</span>
           </div>
@@ -120,17 +120,17 @@ ini_set('error_reporting', 0);
 
 
           <div class="campo">
-            <label for="direccion-domicilio">Dirección de Domicilio</label>
+            <label for="direccion-domicilio">Dirección de domicilio</label>
             <input type="text" id="direccion-domicilio" name="direccion-domicilio" required>
           </div>
 
           <div class="campo">
-            <label for="zona_rural">¿Vives en Zona Rural?</label>
+            <label for="zona_rural">¿Vives en zona rural?</label>
             <input type="checkbox" id="zona_rural" name="zona_rural">
           </div>
 
           <div class="vereda-container" style="display: none;">
-            <label for="vereda">Nombre de la Vereda</label>
+            <label for="vereda">Nombre de la vereda</label>
             <input type="text" id="vereda" name="vereda">
           </div>
 
@@ -139,7 +139,7 @@ ini_set('error_reporting', 0);
     </div>
 
     <div class="botones">
-      <a href="inicioSesion.php" class="boton boton-cancelar">Cancelar</a>
+      <a href="inicioSesion.php" class="boton boton-cancelar">Regresar</a>
       <button type="submit" form="form-registro" class="boton boton-registrarse" id="submit-btn">Registrarse</button>
     </div>
   </div>
