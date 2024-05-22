@@ -14,6 +14,8 @@
   <div class="registro-contenedor">
     <div class="registro">
       <div class="registro-izquierda">
+
+
         <form id="form-izquierda">
           <div class="campo">
             <label for="tipo_identificacion">Tipo de identificación *</label>
@@ -84,12 +86,6 @@
 
         <form id="form-registro">
 
-
-
-          
-
-
-
           <div class="campo">
             <label for="telefono">Número de celular *</label>
             <input type="tel" id="telefono" name="telefono" required>
@@ -130,9 +126,7 @@
             <input type="text" id="vereda" name="vereda">
           </div>
 
-        </form>
-
-        <div class="campo">
+          <div class="campo">
             <label for="contraseña">Escribe una contraseña *</label>
             <input type="password" id="contraseña" name="contraseña" required>
             <span class="error" id="contraseña-error">Este campo es obligatorio.</span>
@@ -144,6 +138,10 @@
             <span class="error" id="confirmar-contraseña-error">Este campo es obligatorio.</span>
             <span class="error" id="verificar-contraseña-error"></span>
           </div>
+
+        </form>
+
+
       </div>
     </div>
 
