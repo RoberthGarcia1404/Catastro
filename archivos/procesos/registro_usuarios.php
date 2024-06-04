@@ -2,26 +2,31 @@
 session_start();
 include_once 'conexion.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitización y Validación de Datos utilizando alternativas modernas
-    $tipo_identificacion = htmlspecialchars($_POST['tipo_identificacion']);
-    $numero_documento = filter_var($_POST['numero-documento'], FILTER_VALIDATE_INT);
-    $fecha_expedicion = htmlspecialchars($_POST['fecha_expedicion']);
-    $primer_nombre = htmlspecialchars($_POST['primer_nombre']);
-    $segundo_nombre = isset($_POST['segundo_nombre']) ? htmlspecialchars($_POST['segundo_nombre']) : '';
-    $primer_apellido = htmlspecialchars($_POST['primer_apellido']);
-    $segundo_apellido = isset($_POST['segundo_apellido']) ? htmlspecialchars($_POST['segundo_apellido']) : '';
-    $correo = filter_var($_POST['correo'], FILTER_VALIDATE_EMAIL);
-    $confirmar_correo = filter_var($_POST['confirmar_correo'], FILTER_VALIDATE_EMAIL);
-    $telefono = htmlspecialchars($_POST['telefono']);
-    $pais = htmlspecialchars($_POST['pais']);
-    $departamento = isset($_POST['departamento']) ? htmlspecialchars($_POST['departamento']) : '';
-    $municipio = isset($_POST['municipio']) ? htmlspecialchars($_POST['municipio']) : '';
-    $direccion_domicilio = htmlspecialchars($_POST['direccion-domicilio']);
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
+    // Función para sanitizar entradas
+    function sanitize_input($conexion, $input) {
+        return mysqli_real_escape_string($conexion, strip_tags(trim($input)));
+    }
+
+    // Sanitización y Validación de Datos
+    $tipo_identificacion = sanitize_input($conexion, $_POST['tipo_identificacion']);
+    $numero_documento = sanitize_input($conexion, $_POST['numero-documento']);
+    $fecha_expedicion = sanitize_input($conexion, $_POST['fecha_expedicion']);
+    $primer_nombre = sanitize_input($conexion, $_POST['primer_nombre']);
+    $segundo_nombre = isset($_POST['segundo_nombre']) ? sanitize_input($conexion, $_POST['segundo_nombre']) : '';
+    $primer_apellido = sanitize_input($conexion, $_POST['primer_apellido']);
+    $segundo_apellido = isset($_POST['segundo_apellido']) ? sanitize_input($conexion, $_POST['segundo_apellido']) : '';
+    $correo = sanitize_input($conexion, $_POST['correo']);
+    $confirmar_correo = sanitize_input($conexion, $_POST['confirmar_correo']);
+    $telefono = sanitize_input($conexion, $_POST['telefono']);
+    $pais = sanitize_input($conexion, $_POST['pais']);
+    $departamento = isset($_POST['departamento']) ? sanitize_input($conexion, $_POST['departamento']) : '';
+    $municipio = isset($_POST['municipio']) ? sanitize_input($conexion, $_POST['municipio']) : '';
+    $direccion_domicilio = sanitize_input($conexion, $_POST['direccion-domicilio']);
     $zona_rural = isset($_POST['zona_rural']) ? 1 : 0;
-    $vereda = isset($_POST['vereda']) ? htmlspecialchars($_POST['vereda']) : '';
-    $contraseña = $_POST['contraseña'];
-    $confirmar_contraseña = $_POST['comfirmar-contraseña'];
+    $vereda = isset($_POST['vereda']) ? sanitize_input($conexion, $_POST['vereda']) : '';
+    $contraseña = sanitize_input($conexion, $_POST['contraseña']);
+    $confirmar_contraseña = sanitize_input($conexion, $_POST['comfirmar-contraseña']);
 
     // Verificar si los correos coinciden
     if ($correo !== $confirmar_correo) {
@@ -82,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conexion->close();
 } else {
     // Si el método de solicitud no es POST
-    header("Location: registro.php");
+    header("Location: ../secciones/registro.php");
     exit();
 }
 ?>

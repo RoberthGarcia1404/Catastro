@@ -145,7 +145,7 @@ include_once 'header.php';
 
     <div class="botones">
       <a href="inicioSesion.php" class="boton boton-cancelar">Regresar</a>
-      <button type="submit" form="form-registro" class="boton boton-registrarse" id="submit-btn">Registrarse</button>
+      <button type="submit" form="form-registro" class="boton boton-registrarse" name="registro" id="submit-btn">Registrarse</button>
     </div>
   </div>
 </section>
