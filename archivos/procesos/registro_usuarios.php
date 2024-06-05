@@ -2,6 +2,7 @@
 session_start();
 include_once 'conexion.php';
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
     // Función para sanitizar entradas
     function sanitize_input($conexion, $input) {
