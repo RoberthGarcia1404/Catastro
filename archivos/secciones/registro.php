@@ -166,6 +166,11 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             openModal(data.message);
+            if (data.status === 'success') {
+                setTimeout(function() {
+                    window.location.href = 'inicioSesion.php'; // Redirige después de 1 segundo
+                }, 1500); // 1000 milisegundos = 1 segundo
+            }
         })
         .catch(error => console.error('Error:', error));
     });
