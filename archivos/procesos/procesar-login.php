@@ -1,8 +1,10 @@
 <?php
 session_start();
 include_once 'conexion.php';
+header('Content-Type: application/json');
 
-if (isset($_POST['login'])) {
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     // Sanitizar y validar los datos recibidos
     $tipoAcceso = mysqli_real_escape_string($conexion, strip_tags(trim($_POST['tipoAcceso'])));
     $identificacion = mysqli_real_escape_string($conexion, strip_tags(trim($_POST['identificacion'])));
@@ -10,7 +12,7 @@ if (isset($_POST['login'])) {
 
     // Verificar si los campos están vacíos
     if (empty($tipoAcceso) || empty($identificacion) || empty($password)) {
-        echo '<div class="alert alert-danger" role="alert">Todos los campos son obligatorios.</div>';
+        echo json_encode(['status' => 'error', 'message' => 'Todos los campos son obligatorios.']);
         exit();
     }
 
@@ -22,12 +24,11 @@ if (isset($_POST['login'])) {
 
     $query->bind_param("is", $identificacion, $tipoAcceso);
     $query->execute();
-    $query->store_result();
 
     if ($query->num_rows > 0) {
         $query->bind_result($id_cc, $hashed_password);
         $query->fetch();
-
+        
         // Verificar la contraseña
         if (password_verify($password, $hashed_password)) {
             // Autenticación exitosa
@@ -36,17 +37,20 @@ if (isset($_POST['login'])) {
             echo '<script>window.location.href = "../secciones/inicio-con-registro.php";</script>';
         } else {
             // Contraseña incorrecta
-            echo '<div class="alert alert-danger" role="alert">Contraseña incorrecta.</div>';
+            echo json_encode(['status' => 'error', 'message' => 'Contraseña incorrecta.']);
+            exit();
         }
     } else {
         // Usuario no encontrado
-        echo '<div class="alert alert-danger" role="alert">Usuario no encontrado.</div>';
+        echo json_encode(['status' => 'error', 'message' => 'Usuario no encontrado.']);
+        exit();
     }
 
     // Cerrar la declaración
     $query->close();
 } else {
     // Si el método de solicitud no es POST
+    echo json_encode(['status' => 'error', 'message' => 'Método de solicitud no válido.']);
     header("Location: ../secciones/inicioSesion.php");
     exit();
 }
