@@ -70,21 +70,27 @@ include 'ventana_modal.php';
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('submit-btn').addEventListener('click', function(event) {
         event.preventDefault(); // Evita el envío normal del formulario
-        const formData = new FormData(document.getElementById('form-inisioSesion'));
-        formData.append('login', 'true'); // Añade manualmente el campo 'login'
+        const formData = new FormData(document.getElementById('form-inisioSesion')); // Crear un nuevo FormData con los datos del formulario
+        formData.append('login', 'true'); // Añade manualmente el campo 'login' para que sea reconocido en el servidor
 
-        fetch('../procesos/procesar-login.php', {
+        fetch('../procesos/procesar-login.php', { // Envía los datos del formulario a procesar-login.php usando el método POST
             method: 'POST',
             body: formData
         })
-        .then(response => response.json())
+        .then(response => response.json()) // Parsear la respuesta del servidor como JSON
         .then(data => {
-            openModal(data.message);
+            openModal(data.message); // Mostrar el mensaje en el modal
+            if (data.status === 'success') { // Si el inicio de sesión fue exitoso
+                setTimeout(function() { // Esperar 1 segundo
+                    window.location.href = 'inicio-con-registro.php'; // Redirigir a inicio-con-registro.php
+                }, 1300); // 1000 milisegundos = 1 segundo
+            }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error)); // Manejar cualquier error que ocurra durante la solicitud
     });
 });
 </script>
+
 
 
 <?php include_once 'footer.php'; ?>

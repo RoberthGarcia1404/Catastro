@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once 'conexion.php';
-header('Content-Type: application/json');
+header('Content-Type: application/json');// Especifica que el contenido de la respuesta es JSON
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
@@ -19,22 +19,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     // Preparar la consulta para verificar el usuario
     $query = $conexion->prepare("SELECT id_cc, contraseña FROM usuarios WHERE id_cc = ? AND tipo_identificacion = ?");
     if (!$query) {
-        die("Error en la preparación de la consulta: " . $conexion->error);
+        echo json_encode(['status' => 'error', 'message' => 'Error en la preparación de la consulta: ' . $conexion->error]);
+        exit();
     }
 
     $query->bind_param("is", $identificacion, $tipoAcceso);
     $query->execute();
+    $query->store_result(); // Asegúrate de que num_rows funcione correctamente
 
+    // Verificar si el usuario existe
     if ($query->num_rows > 0) {
         $query->bind_result($id_cc, $hashed_password);
         $query->fetch();
-        
+
         // Verificar la contraseña
         if (password_verify($password, $hashed_password)) {
             // Autenticación exitosa
             $_SESSION['id_cc'] = $id_cc;
             $_SESSION['tipo_identificacion'] = $tipoAcceso;
-            echo '<script>window.location.href = "../secciones/inicio-con-registro.php";</script>';
+            echo json_encode(['status' => 'success', 'message' => 'Inicio de sesión exitoso.']);
+            exit();
         } else {
             // Contraseña incorrecta
             echo json_encode(['status' => 'error', 'message' => 'Contraseña incorrecta.']);
@@ -49,9 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
     // Cerrar la declaración
     $query->close();
 } else {
-    // Si el método de solicitud no es POST
+    // Si el método de solicitud no es POST o no se encuentra el campo 'login'
     echo json_encode(['status' => 'error', 'message' => 'Método de solicitud no válido.']);
-    header("Location: ../secciones/inicioSesion.php");
     exit();
 }
-?>
