@@ -4,6 +4,7 @@
 <?php 
 session_start();
 include_once 'header.php'; 
+include 'ventana_modal.php'; 
 ?>
 
 <section style="margin-top:4rem;">
@@ -150,6 +151,16 @@ include_once 'header.php';
   </div>
 </section>
 
+<!-- Activacion de la ventana modal -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    <?php if (isset($_SESSION['modal_message'])): ?>
+        openModal("<?php echo $_SESSION['modal_message']; unset($_SESSION['modal_message']); ?>");
+    <?php endif; ?>
+});
+</script>
+
+
 <?php include_once 'footer.php'; ?>
 
 <!-- JS del plugin intl-tel-input -->
@@ -160,3 +171,4 @@ include_once 'header.php';
 <script src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.0/js/countrySelect.min.js"></script>
 <script src="../../js/validacion-campos.js"></script>
 <script src="../../js/funcionalidades-registro.js"></script>
+<script src="../../js/ventana_modal.js"></script>

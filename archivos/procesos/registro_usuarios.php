@@ -5,7 +5,8 @@ include_once 'conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
     // Función para sanitizar entradas
-    function sanitize_input($conexion, $input) {
+    function sanitize_input($conexion, $input)
+    {
         return mysqli_real_escape_string($conexion, strip_tags(trim($input)));
     }
 
@@ -29,14 +30,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
     $contraseña = sanitize_input($conexion, $_POST['contraseña']);
     $confirmar_contraseña = sanitize_input($conexion, $_POST['comfirmar-contraseña']);
 
+    function redirect_with_message($message)
+    {
+        $_SESSION['modal_message'] = $message;
+        header("Location: ../secciones/registro.php");
+        exit();
+    }
+
+
     // Verificar si los correos coinciden
     if ($correo !== $confirmar_correo) {
-        die("Los correos electrónicos no coinciden.");
+        redirect_with_message("Los correos electrónicos no coinciden.");
     }
 
     // Verificar si las contraseñas coinciden
     if ($contraseña !== $confirmar_contraseña) {
-        die("Las contraseñas no coinciden.");
+        redirect_with_message("Las contraseñas no coinciden.");
     }
 
     // Verificar si el número de documento ya está registrado
@@ -45,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
     $stmt->execute();
     $stmt->store_result();
     if ($stmt->num_rows > 0) {
-        die("El número de identificación ya está registrado.");
+        redirect_with_message("El número de identificación ya está registrado.");
     }
     $stmt->close();
 
@@ -55,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
     $stmt->execute();
     $stmt->store_result();
     if ($stmt->num_rows > 0) {
-        die("El correo electrónico ya está registrado.");
+        redirect_with_message("El correo electrónico ya está registrado.");
     }
     $stmt->close();
 
@@ -67,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
 
     $stmt = $conexion->prepare($sql);
     if ($stmt === false) {
-        die("Error en la preparación de la consulta: " . $conexion->error);
+        redirect_with_message("Error en la preparación de la consulta: " . $conexion->error);
     }
 
     // Vincular parámetros
@@ -75,20 +84,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        // Registro exitoso
-        header("Location: ../secciones/inicioSesion.php");
-        exit();
+        redirect_with_message("Registro exitoso.");
     } else {
-        // Error en el registro
-        die("Error en la ejecución de la consulta: " . $stmt->error);
+        redirect_with_message("Error en la ejecución de la consulta: " . $stmt->error);
     }
 
     // Cerrar la declaración y la conexión
     $stmt->close();
     $conexion->close();
 } else {
-    // Si el método de solicitud no es POST
-    header("Location: ../secciones/registro.php");
-    exit();
+    redirect_with_message("Método de solicitud no válido.");
 }
-?>
