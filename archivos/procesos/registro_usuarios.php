@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once 'conexion.php';
+header('Content-Type: application/json');
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
@@ -30,22 +31,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
     $contraseña = sanitize_input($conexion, $_POST['contraseña']);
     $confirmar_contraseña = sanitize_input($conexion, $_POST['comfirmar-contraseña']);
 
-    function redirect_with_message($message)
-    {
-        $_SESSION['modal_message'] = $message;
-        header("Location: ../secciones/registro.php");
-        exit();
-    }
-
-
     // Verificar si los correos coinciden
     if ($correo !== $confirmar_correo) {
-        redirect_with_message("Los correos electrónicos no coinciden.");
+        echo json_encode(['status' => 'error', 'message' => 'Los correos electrónicos no coinciden.']);
+        exit();
     }
 
     // Verificar si las contraseñas coinciden
     if ($contraseña !== $confirmar_contraseña) {
-        redirect_with_message("Las contraseñas no coinciden.");
+        echo json_encode(['status' => 'error', 'message' => 'Las contraseñas no coinciden.']);
+        exit();
     }
 
     // Verificar si el número de documento ya está registrado
@@ -54,7 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
     $stmt->execute();
     $stmt->store_result();
     if ($stmt->num_rows > 0) {
-        redirect_with_message("El número de identificación ya está registrado.");
+        echo json_encode(['status' => 'error', 'message' => 'El número de identificación ya está registrado.']);
+        exit();
     }
     $stmt->close();
 
@@ -64,7 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
     $stmt->execute();
     $stmt->store_result();
     if ($stmt->num_rows > 0) {
-        redirect_with_message("El correo electrónico ya está registrado.");
+        echo json_encode(['status' => 'error', 'message' => 'El correo electrónico ya está registrado.']);
+        exit();
     }
     $stmt->close();
 
@@ -76,7 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
 
     $stmt = $conexion->prepare($sql);
     if ($stmt === false) {
-        redirect_with_message("Error en la preparación de la consulta: " . $conexion->error);
+        echo json_encode(['status' => 'error', 'message' => 'Error en la preparación de la consulta.']);
+        exit();
     }
 
     // Vincular parámetros
@@ -84,14 +82,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        redirect_with_message("Registro exitoso.");
+        echo json_encode(['status' => 'success', 'message' => 'Registro exitoso.']);
     } else {
-        redirect_with_message("Error en la ejecución de la consulta: " . $stmt->error);
+        echo json_encode(['status' => 'error', 'message' => 'Error en la ejecución de la consulta.']);
     }
 
     // Cerrar la declaración y la conexión
     $stmt->close();
     $conexion->close();
 } else {
-    redirect_with_message("Método de solicitud no válido.");
+    echo json_encode(['status' => 'error', 'message' => 'Método de solicitud no válido.']);
 }
+?>

@@ -151,14 +151,27 @@ include 'ventana_modal.php';
   </div>
 </section>
 
-<!-- Activacion de la ventana modal -->
+<!-- Activación de la ventana modal -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    <?php if (isset($_SESSION['modal_message'])): ?>
-        openModal("<?php echo $_SESSION['modal_message']; unset($_SESSION['modal_message']); ?>");
-    <?php endif; ?>
+    document.getElementById('submit-btn').addEventListener('click', function(event) {
+        event.preventDefault(); // Evita el envío normal del formulario
+        const formData = new FormData(document.getElementById('form-registro'));
+        formData.append('registro', 'true'); // Añade manualmente el campo 'registro'
+
+        fetch('../procesos/registro_usuarios.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            openModal(data.message);
+        })
+        .catch(error => console.error('Error:', error));
+    });
 });
 </script>
+
 
 
 <?php include_once 'footer.php'; ?>
