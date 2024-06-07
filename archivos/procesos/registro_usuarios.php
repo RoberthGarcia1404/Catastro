@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once 'conexion.php';
 header('Content-Type: application/json');
 
@@ -30,6 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
     $vereda = isset($_POST['vereda']) ? sanitize_input($conexion, $_POST['vereda']) : '';
     $contraseña = sanitize_input($conexion, $_POST['contraseña']);
     $confirmar_contraseña = sanitize_input($conexion, $_POST['comfirmar-contraseña']);
+
+    // Verificar campos obligatorios en el servidor
+       if (empty($tipo_identificacion) || empty($numero_documento) || empty($fecha_expedicion) || empty($primer_nombre) || empty($primer_apellido) || empty($correo) || empty($confirmar_correo) || empty($telefono) || empty($pais) || empty($departamento) || empty($municipio) || empty($direccion_domicilio) || empty($contraseña) || empty($confirmar_contraseña)) {
+        echo json_encode(['status' => 'error', 'message' => 'Todos los campos obligatorios deben ser completados.']);
+        exit();
+    }
 
     // Verificar si los correos coinciden
     if ($correo !== $confirmar_correo) {
