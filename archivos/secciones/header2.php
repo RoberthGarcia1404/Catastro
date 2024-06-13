@@ -17,11 +17,12 @@ session_start();
         <a id="cerrar_sesion" href="#">
             <i class='bx bx-user-pin'></i>
             <p>CC</p>
-            <p><?php echo $_SESSION['id_cc'] ?></p> 
+            <p><?php echo $_SESSION['id_cc'] ?></p>
             <i class="bx bx-chevron-down iluminar_icono"></i>
+            <!-- SUBMENU CERRAR SESION -->
             <ul class="submenu2">
-            <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
-        </ul>
+                <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
+            </ul>
         </a>
     </div>
 </div>
