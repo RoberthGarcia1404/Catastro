@@ -67,7 +67,11 @@ agregarComportamientoSubMenu(
   document.querySelector(".navbar li:nth-child(3) .submenu")
 );
 
-
+//Aplicar la funciona a cerrar sesion en el header 2
+agregarComportamientoSubMenu(
+  document.getElementById("cerrar_sesion"),
+  document.querySelector(".header2 .cc-usuario .submenu2")
+);
 
 /*HEADER 2 tramites con registro */
 /* Estilo para la linea de el enlace permanesca activo */

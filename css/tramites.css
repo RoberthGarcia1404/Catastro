@@ -67,6 +67,40 @@
     color: #194e9a;
     margin: 0 7px;
 }
+/* Submenu de los enlaces en el segundo navbar */
+.submenu2 {
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    list-style: none;
+
+    transition: 0.5s linear; 
+    border: 1px solid #7775752a;
+    border-radius: 0.8rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+
+    margin-top: 0.8rem; /* Ajusta según sea necesario */
+    z-index: 1000; /* Asegura que el submenú aparezca por encima de otros elementos */
+  }
+  
+  .submenu2 li {
+    margin: 0.6rem;
+  }
+  
+  .submenu2 li a {
+    padding: 4px 17px;
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .submenu2.show {
+    display: block;
+    
+  }
+
+/*--------------------------------------------------------------------------*/
 
 .grid-tramites{
     display: grid;
@@ -132,6 +166,11 @@
     background-color: #ffffff4d;
 
 }
+
+
+
+
+
 
 
 /*-------------- consulta-tramite.php-----------------*/
