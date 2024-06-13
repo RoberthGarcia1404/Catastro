@@ -19,11 +19,12 @@ session_start();
             <p>CC</p>
             <p><?php echo $_SESSION['id_cc'] ?></p>
             <i class="bx bx-chevron-down iluminar_icono"></i>
-            <!-- SUBMENU CERRAR SESION -->
-            <ul class="submenu2">
-                <li><a href="cerrar_sesion.php">Cerrar sesión</a></li>
-            </ul>
+            
         </a>
+        <!-- SUBMENU CERRAR SESION -->
+        <ul class="submenu2">
+                <li><a href="../procesos/cerrar_sesion.php">Cerrar sesión</a></li>
+         </ul>
     </div>
 </div>
 
