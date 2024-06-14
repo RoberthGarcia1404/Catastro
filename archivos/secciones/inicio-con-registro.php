@@ -1,6 +1,7 @@
+<?php include_once '../procesos/verificar_sesion.php';?>
 <?php include_once 'header.php'; ?>
-
 <?php include_once 'header2.php'; ?>
+
 
 <section style="margin-top:-15px;">
     <h3 class="titulo-tramites titulos-principales">Trámites y servicios disponibles</h3>
@@ -35,3 +36,6 @@
 
 
 <?php include_once 'footer.php'; ?>
+
+
+<script src="../../js/mensajeCerrarSesion.js"></script>

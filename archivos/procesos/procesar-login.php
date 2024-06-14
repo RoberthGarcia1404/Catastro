@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
         if (password_verify($password, $hashed_password)) {
             // Autenticación exitosa
             $_SESSION['id_cc'] = $id_cc;
-            $_SESSION['tipo_identificacion'] = $tipoAcceso;
+            //$_SESSION['tipo_identificacion'] = $tipoAcceso;
             echo json_encode(['status' => 'success', 'message' => 'Inicio de sesión exitoso.']);
             exit();
         } else {

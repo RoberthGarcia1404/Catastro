@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!-- contenedor de la barra de navegacion y del contenedor de la cedula -->
 <div class="header2">
     <!-- barra de navegacion de los tramites -->
