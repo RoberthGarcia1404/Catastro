@@ -1,4 +1,4 @@
-<?php include_once '../procesos/verificar_sesion.php';?>
+<?php include_once '../procesos/verificar_sesion.php'; ?>
 <?php include_once 'header.php'; ?>
 <?php include_once 'header2.php'; ?>
 
@@ -31,7 +31,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>Área</th>
+                    <th>Área (m²)</th>
                     <th>Número de Baños</th>
                     <th>Número de Habitaciones</th>
                     <th>Número de Locales</th>
@@ -58,14 +58,14 @@
         <table>
             <thead>
                 <tr>
-                    <th>Área</th>
+                    <th>Área (m²)</th>
                     <th>Zona Física</th>
                     <th>Zona Geo-Económica</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>129</td>
+                    <td>190</td>
                     <td>32</td>
                     <td>40</td>
                 </tr>

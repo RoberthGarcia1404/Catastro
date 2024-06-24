@@ -1,4 +1,4 @@
-<?php include_once '../procesos/verificar_sesion.php';?>
+<?php include_once '../procesos/verificar_sesion.php'; ?>
 <?php include_once 'header.php'; ?>
 <?php include_once 'header2.php'; ?>
 
@@ -10,9 +10,9 @@
             <thead>
                 <tr>
                     <th>Número Predial</th>
-                    <th>Avalúo</th>
-                    <th>Área Terreno</th>
-                    <th>Área Construcción</th>
+                    <th>Avalúo (COP)</th>
+                    <th>Área Terreno (m²)</th>
+                    <th>Área Construcción (m²)</th>
                     <th>Matrícula</th>
                     <th>Dirección</th>
                     <th>Acción</th>
@@ -20,9 +20,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>130010101000001080015</td>
+                    <td>13001010100000</td>
                     <td>405785000</td>
-                    <td>129</td>
+                    <td>190</td>
                     <td>182</td>
                     <td>060-37835</td>
                     <td>Cra 9 #19-27</td>
@@ -31,7 +31,7 @@
                             <a href="detalles-predios.php" title="Ver detalle"><i class='bx bx-search-alt-2'></i></a>
 
                         </span>
-                             <a href=" " title="Crear Tramite"><i class='bx bxs-add-to-queue'></i></a>
+                        <a href=" " title="Crear Tramite"><i class='bx bxs-add-to-queue'></i></a>
                         </span>
 
                     </td>
