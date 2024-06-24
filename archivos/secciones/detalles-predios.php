@@ -1,5 +1,5 @@
+<?php include_once '../procesos/verificar_sesion.php';?>
 <?php include_once 'header.php'; ?>
-
 <?php include_once 'header2.php'; ?>
 
 <section style="margin-top:-15px;">
@@ -20,7 +20,7 @@
             <tr>
                 <td>QUIROZ HERNANDEZ NUBIA-SORAYA</td>
                 <td>CC</td>
-                <td>000045435829</td>
+                <td>1002522983</td>
             </tr>
         </tbody>
     </table>
