@@ -1,0 +1,92 @@
+.contenedor-tramites{
+    font-weight: 450;
+    margin: 0 auto;
+    margin-top: 3rem;
+    max-width: 36.25rem; /* 500px convertidos a rem */
+    background-color: #fff;
+    border: 1px solid #cccccc71;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 10px 4px rgba(172, 175, 175, 0.15);
+    padding: 1.25rem; 
+
+}
+
+.opciones_tramites{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedor-tramites label {
+    display: block;
+    margin-top: 1.2rem; 
+}
+
+.contenedor-tramites input,
+.contenedor-tramites select{
+    width: 100%;
+    padding: .8rem; 
+    margin-top: 0.625rem; 
+    border: 0.0625rem solid #ccccccc0; 
+    border-radius: 0.5rem; 
+    box-shadow: 2px 2px 10px 4px rgba(172, 175, 175, 0.15);
+}
+
+
+.botones{
+    display: flex;
+    gap: 2rem;
+}
+
+
+
+.contenedor-tramites button {
+    background-color: #194e9a;
+    color: #fff;
+    padding: 0.6rem 0; 
+    border: none;
+    border-radius: 0.5rem; 
+    cursor: pointer;
+    width: 100%;
+    margin: 0.5rem 0;
+    margin-top: 1rem;
+    font-weight: 450;
+}
+
+.contenedor-tramites button:hover {
+    background-color: #0056A0;
+}
+
+/* Estilos para los campos de archivos */
+.file-upload {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem 0;
+    border: 2px dashed #ccc;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px 4px rgba(172, 175, 175, 0.15);
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload .file-label {
+    color: #333;
+    font-weight: bold;
+}
+
+.file-upload small {
+    display: block;
+    color: #999;
+    margin-top: 0.5rem;
+}

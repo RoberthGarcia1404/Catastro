@@ -31,7 +31,7 @@
                             <a href="detalles-predios.php" title="Ver detalle"><i class='bx bx-search-alt-2'></i></a>
 
                         </span>
-                        <a href=" " title="Crear Tramite"><i class='bx bxs-add-to-queue'></i></a>
+                        <a href="crear_tramite.php" title="Crear Tramite"><i class='bx bxs-add-to-queue'></i></a>
                         </span>
 
                     </td>
