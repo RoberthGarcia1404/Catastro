@@ -110,7 +110,11 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 openModal(data.message);
-                
+                if (data.status === 'success') {
+                    setTimeout(function() {
+                        window.location.href = 'mis-tramites.php';
+                    }, 2000); // Redirigir después de 2 segundos
+                }
             })
             .catch(error => {
                 openModal('Ocurrió un error al crear el trámite.');
