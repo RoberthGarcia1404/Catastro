@@ -31,8 +31,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['registro'])) {
     $confirmar_contraseña = sanitize_input($conexion, $_POST['comfirmar-contraseña']);
 
     // Verificar campos obligatorios en el servidor
-       if (empty($tipo_identificacion) || empty($numero_documento) || empty($fecha_expedicion) || empty($primer_nombre) || empty($primer_apellido) || empty($correo) || empty($confirmar_correo) || empty($telefono) || empty($pais) || empty($departamento) || empty($municipio) || empty($direccion_domicilio) || empty($contraseña) || empty($confirmar_contraseña)) {
+    if (empty($tipo_identificacion) || empty($numero_documento) || empty($fecha_expedicion) || empty($primer_nombre) || empty($primer_apellido) || empty($correo) || empty($confirmar_correo) || empty($telefono) || empty($pais) || empty($departamento) || empty($municipio) || empty($direccion_domicilio) || empty($contraseña) || empty($confirmar_contraseña)) {
         echo json_encode(['status' => 'error', 'message' => 'Todos los campos obligatorios deben ser completados.']);
+        exit();
+    }
+
+    // Verificar que el número de documento tenga exactamente 10 dígitos y sea solo numérico
+    if (!preg_match('/^\d{10}$/', $telefono)) {
+        echo json_encode(['status' => 'error', 'message' => 'El número de telefono debe tener exactamente 10 dígitos y ser solo numérico.']);
         exit();
     }
 
