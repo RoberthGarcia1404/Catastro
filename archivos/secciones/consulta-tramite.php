@@ -33,7 +33,7 @@
                 if (data.status === 'success') {
                     setTimeout(function() {
                         window.location.href = 'estado-tramite.php';
-                    }, 2000); // Redirigir después de 2 segundos
+                    }, 1400); // Redirigir después de 2 segundos
                 }
             })
             .catch(error => {

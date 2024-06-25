@@ -48,7 +48,11 @@ $conexion->close();
                     <td><?php echo htmlspecialchars($tramite['fecha']); ?></td>
                     <td><?php echo htmlspecialchars($tramite['estado']); ?></td>
                     <td>Centro administrartivo, bloque 2,Primer Piso</td> <!-- Ajusta según tu estructura de base de datos -->
-                    <td class="icono-descarga"><i class='bx bx-download'></i></td>
+                    <td class="icono-descarga">
+                        <a href="../../archivos_Usuarios/aprobacion_catastro.pdf" target="_blank" title="Documento De Aprovación">
+                            <i class='bx bx-download'></i>
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>
