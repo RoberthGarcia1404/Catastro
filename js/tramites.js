@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Obtener referencias a los elementos del formulario y contenedores
     const tramiteSelect = document.getElementById('tramite');
     const tipoTramiteContainer = document.getElementById('tipoTramiteContainer');
     const tipoTramiteSelect = document.getElementById('tipoTramite');
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             tramitesData = data;
+            // Añadir opciones al select de trámites
             data.forEach(tramite => {
                 const option = document.createElement('option');
                 option.value = tramite.id;
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const tramite = tramitesData.find(t => t.id === tramiteId);
 
         if (tramite) {
+            // Limpiar y mostrar opciones de tipo de trámite
             tipoTramiteSelect.innerHTML = '<option value="">Seleccionar...</option>';
             tramite.tipos.forEach(tipo => {
                 const option = document.createElement('option');
@@ -51,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const tipoTramite = tramite ? tramite.tipos.find(t => t.id === tipoTramiteId) : null;
 
         if (tipoTramite) {
+            // Limpiar y mostrar campos de documentos
             documentosContainer.innerHTML = '';
             tipoTramite.documentos.forEach(doc => {
                 const fileUploadDiv = document.createElement('div');
@@ -103,17 +107,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (valid) {
             const formData = new FormData(tramiteForm);
+            // Enviar los datos del formulario mediante fetch
             fetch(tramiteForm.action, {
                 method: 'POST',
                 body: formData
             })
             .then(response => response.json())
             .then(data => {
-                openModal(data.message);
+                openModal(data.message); // Mostrar mensaje en modal
                 if (data.status === 'success') {
                     setTimeout(function() {
-                        window.location.href = 'mis-tramites.php';
-                    }, 2000); // Redirigir después de 2 segundos
+                        window.location.href = 'mis-tramites.php'; // Redirigir después de 2 segundos
+                    }, 2000); 
                 }
             })
             .catch(error => {
@@ -124,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Función para limpiar el formulario y ocultar los contenedores de tipo de trámite y documentos
 function limpiarFormulario() {
     document.getElementById('tramiteForm').reset();
     document.getElementById('tipoTramiteContainer').style.display = 'none';
