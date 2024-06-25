@@ -247,23 +247,32 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
     .header2 {
-        width: calc(100% - 6rem);
-        padding: 0;
-        justify-content: center;
-    
+      width: calc(100% - 6rem);
+      padding: 0;
+      justify-content: center;
     }
     
     .navbar2 {
-        display: flex; /* Utiliza flexbox para organizar los elementos */
-        flex-wrap: wrap; /* Permite que los elementos se envuelvan cuando no hay suficiente espacio */
-        flex-direction:column;
-        text-align: center;
-        gap: 1rem;
-        justify-content: center;
-        padding: 1rem 0rem;
-    } 
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+    .navbar2 a {      
+        margin-right: 0px;
+    }
      
-}
-
+    .cc-usuario {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      gap: 1rem;
+      justify-content: center;
+      padding: 1rem 2rem 1rem 2rem;
+    }
+  }
+  
