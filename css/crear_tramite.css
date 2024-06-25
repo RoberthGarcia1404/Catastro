@@ -90,3 +90,10 @@
     color: #999;
     margin-top: 0.5rem;
 }
+
+.file-name {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+    color: #4caf50; /* Verde para indicar éxito */
+}

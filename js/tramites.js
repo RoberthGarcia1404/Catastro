@@ -55,19 +55,25 @@ document.addEventListener('DOMContentLoaded', function() {
             tipoTramite.documentos.forEach(doc => {
                 const fileUploadDiv = document.createElement('div');
                 fileUploadDiv.className = 'file-upload';
+                const fileLabel = document.createElement('div');
+                fileLabel.className = 'file-label';
+                fileLabel.textContent = `Copia de ${doc.nombre} ${doc.requerido ? '*' : ''}`;
                 const fileInput = document.createElement('input');
                 fileInput.type = 'file';
                 fileInput.name = doc.nombre.replace(/\s+/g, '_').toLowerCase(); // Reemplazar espacios por guiones bajos y poner en minúscula
                 if (doc.requerido) {
                     fileInput.required = true; // Marcar como requerido si es obligatorio
                 }
-                const fileLabel = document.createElement('div');
-                fileLabel.className = 'file-label';
-                fileLabel.textContent = `Copia de ${doc.nombre} ${doc.requerido ? '*' : ''}`;
                 const fileSmall = document.createElement('small');
                 fileSmall.textContent = 'Se permiten archivos JPG y PDF. Tamaño máximo: 10 MB.';
-                fileUploadDiv.appendChild(fileInput);
+                const fileNameSpan = document.createElement('span');
+                fileNameSpan.className = 'file-name';
+                fileInput.addEventListener('change', function() {
+                    fileNameSpan.textContent = `Archivo cargado: ${this.files[0].name}`;
+                });
                 fileUploadDiv.appendChild(fileLabel);
+                fileUploadDiv.appendChild(fileInput);
+                fileUploadDiv.appendChild(fileNameSpan);
                 fileUploadDiv.appendChild(fileSmall);
                 documentosContainer.appendChild(fileUploadDiv);
             });
