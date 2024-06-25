@@ -15,11 +15,12 @@
     <div class="contenedor-tramites">
         <!-- Contenedor para mensajes de error -->
         <div id="errorMessage" class="error-message-container"></div>
+
         <form id="tramiteForm" action="../procesos/crear_tramites.php" method="POST" enctype="multipart/form-data">
             <div class="opciones_tramites">
                 <div>
-                    <input type="hidden" id="tramiteNombre" name="tramiteNombre">
-                    <input type="hidden" id="tipoTramiteNombre" name="tipoTramiteNombre">
+                    <input type="hidden" id="nombreTramite" name="nombreTramite">
+                    <input type="hidden" id="nombreTipoTramite" name="nombreTipoTramite">
 
                     <label for="tramite">Trámite *</label>
                     <select id="tramite" name="tramite" required>

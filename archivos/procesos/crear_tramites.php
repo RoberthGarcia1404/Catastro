@@ -12,16 +12,19 @@ $response = ['status' => 'error', 'message' => 'Error al crear el trámite.'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario_id = $_SESSION['id_cc'];
-    $tramite = $_POST['tramite'];
-    $tipoTramite = $_POST['tipoTramite'];
+    $nombreTramite = $_POST['nombreTramite'];
+    $nombreTipoTramite = $_POST['nombreTipoTramite'];
     $fecha = date('Y-m-d');
     $radicado = generarNumeroRadicado();
     $numero_predial = '13001010100000'; // Dato duro
 
+    // Concatenar los nombres del trámite y del tipo de trámite
+    $tramiteCompleto = $nombreTramite . ' - ' . $nombreTipoTramite;
+
     // Insertar el trámite en la base de datos
     $sql = "INSERT INTO tramites (usuario_id, tramite, estado, fecha, radicado, numero_predial) VALUES (?, ?, 'Para asignación', ?, ?, ?)";
     $stmt = $conexion->prepare($sql);
-    $stmt->bind_param('issss', $usuario_id, $tramite, $fecha, $radicado, $numero_predial);
+    $stmt->bind_param('issss', $usuario_id, $tramiteCompleto, $fecha, $radicado, $numero_predial);
     
     if ($stmt->execute()) {
         $tramite_id = $stmt->insert_id;
