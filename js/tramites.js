@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 fileLabel.textContent = `Copia de ${doc.nombre} ${doc.requerido ? '*' : ''}`;
                 const fileInput = document.createElement('input');
                 fileInput.type = 'file';
-                fileInput.name = doc.nombre.replace(/\s+/g, '_').toLowerCase(); // Reemplazar espacios por guiones bajos y poner en minúscula
+                fileInput.name = 'documentos[]';
+                fileInput.dataset.nombreDocumento = doc.nombre; // Almacenar el nombre del documento como un atributo de datos
                 if (doc.requerido) {
                     fileInput.required = true; // Marcar como requerido si es obligatorio
                 }
@@ -96,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 valid = false;
                 const error = document.createElement('div');
                 error.className = 'error-message';
-                error.textContent = `El documento ${input.name.replace(/_/g, ' ')} es obligatorio.`;
+                error.textContent = `El documento ${input.dataset.nombreDocumento} es obligatorio.`;
                 errorMessageContainer.appendChild(error);
             }
         });

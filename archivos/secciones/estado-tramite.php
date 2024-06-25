@@ -1,5 +1,5 @@
+<?php include_once '../procesos/verificar_sesion.php'; ?>
 <?php include_once 'header.php'; ?>
-
 <?php include_once 'header2.php'; ?>
 
 
@@ -37,3 +37,4 @@
 
 
 <?php include_once 'footer.php'; ?>
+<script src="../../js/mensajeCerrarSesion.js"></script>

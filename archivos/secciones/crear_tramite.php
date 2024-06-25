@@ -12,7 +12,9 @@
     </p>
 
     <div class="contenedor-tramites">
-        <form id="tramiteForm" enctype="multipart/form-data">
+        <!-- Contenedor para mensajes de error -->
+        <div id="errorMessage" class="error-message-container"></div>
+        <form id="tramiteForm" action="../procesos/crear_tramites.php" method="POST" enctype="multipart/form-data">
             <div class="opciones_tramites">
                 <div>
                     <label for="tramite">Trámite *</label>
@@ -47,3 +49,6 @@
 
 <script src="../../js/tramites.js"></script>
 <script src="../../js/mensajeCerrarSesion.js"></script>
+
+
+
