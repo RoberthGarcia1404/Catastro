@@ -29,7 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $documentos = $_FILES['documentos'];
         $carpetaDestino = '../../archivos_Usuarios/crear_tramites/';
         foreach ($documentos['tmp_name'] as $key => $tmp_name) {
-            $nombreArchivo = $documentos['name'][$key];
+            $nombreOriginal = $documentos['name'][$key];
+            $nombreArchivo = $radicado . '_' . $nombreOriginal; // Concatenar el radicado al nombre del archivo
             $rutaDestino = $carpetaDestino . basename($nombreArchivo);
 
             if (move_uploaded_file($tmp_name, $rutaDestino)) {
@@ -38,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmtDoc->bind_param('iss', $tramite_id, $nombreArchivo, $rutaDestino);
                 $stmtDoc->execute();
                 $stmtDoc->close();
+            
             }
         }
 
