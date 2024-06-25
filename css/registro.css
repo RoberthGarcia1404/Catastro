@@ -18,7 +18,7 @@
 /* Estilo para el contenedor principal del registro */
 .registro-contenedor {
   margin: 0 auto; /* Centra el contenedor */
-  max-width: 80rem; /* Ancho máximo */
+  max-width: 35rem; /* Ancho máximo */
   background-color: #f9f9f9; /* Fondo gris claro */
   border-radius: 0.8rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Sombra más suave */
@@ -30,6 +30,8 @@
   display: flex; /* Utiliza flexbox para alinear los elementos */
   gap: 2rem; /* Espacio entre las secciones izquierda y derecha */
   flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+  justify-content: center;
+ 
 }
 
 /* Estilo para la parte izquierda del registro y la parte derecha */
