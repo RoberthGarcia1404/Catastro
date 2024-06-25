@@ -46,3 +46,4 @@
 <?php include_once 'footer.php'; ?>
 
 <script src="../../js/tramites.js"></script>
+<script src="../../js/mensajeCerrarSesion.js"></script>
