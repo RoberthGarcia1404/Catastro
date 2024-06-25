@@ -17,6 +17,9 @@
         <form id="tramiteForm" action="../procesos/crear_tramites.php" method="POST" enctype="multipart/form-data">
             <div class="opciones_tramites">
                 <div>
+                    <input type="hidden" id="tramiteNombre" name="tramiteNombre">
+                    <input type="hidden" id="tipoTramiteNombre" name="tipoTramiteNombre">
+
                     <label for="tramite">Trámite *</label>
                     <select id="tramite" name="tramite" required>
                         <option value="">Seleccionar...</option>
@@ -49,6 +52,3 @@
 
 <script src="../../js/tramites.js"></script>
 <script src="../../js/mensajeCerrarSesion.js"></script>
-
-
-
