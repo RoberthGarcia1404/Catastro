@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const tipoTramiteContainer = document.getElementById('tipoTramiteContainer');
     const tipoTramiteSelect = document.getElementById('tipoTramite');
     const documentosContainer = document.getElementById('documentosContainer');
+    const tramiteForm = document.getElementById('tramiteForm');
+    const errorMessageContainer = document.getElementById('errorMessage');
 
     let tramitesData = [];
 
@@ -55,11 +57,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 fileUploadDiv.className = 'file-upload';
                 const fileInput = document.createElement('input');
                 fileInput.type = 'file';
-                fileInput.name = doc.replace(/\s+/g, '_').toLowerCase(); // Reemplazar espacios por guiones bajos y poner en minúscula
-                fileInput.required = true;
+                fileInput.name = doc.nombre.replace(/\s+/g, '_').toLowerCase(); // Reemplazar espacios por guiones bajos y poner en minúscula
+                if (doc.requerido) {
+                    fileInput.required = true; // Marcar como requerido si es obligatorio
+                }
                 const fileLabel = document.createElement('div');
                 fileLabel.className = 'file-label';
-                fileLabel.textContent = `Copia de ${doc} *`;
+                fileLabel.textContent = `Copia de ${doc.nombre} ${doc.requerido ? '*' : ''}`;
                 const fileSmall = document.createElement('small');
                 fileSmall.textContent = 'Se permiten archivos JPG y PDF. Tamaño máximo: 10 MB.';
                 fileUploadDiv.appendChild(fileInput);
@@ -70,6 +74,30 @@ document.addEventListener('DOMContentLoaded', function() {
             documentosContainer.style.display = 'block';
         } else {
             documentosContainer.style.display = 'none';
+        }
+    });
+
+    // Manejar el envío del formulario con validación
+    tramiteForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar el envío normal del formulario
+        errorMessageContainer.innerHTML = ''; // Limpiar cualquier mensaje de error previo
+
+        // Validar si los campos requeridos están completos
+        const inputs = documentosContainer.querySelectorAll('input[required]');
+        let valid = true;
+        inputs.forEach(input => {
+            if (!input.value) {
+                valid = false;
+                const error = document.createElement('div');
+                error.className = 'error-message';
+                error.textContent = `El documento ${input.name.replace(/_/g, ' ')} es obligatorio.`;
+                errorMessageContainer.appendChild(error);
+            }
+        });
+
+        if (valid) {
+            // Si todos los campos están completos, enviar el formulario
+            tramiteForm.submit();
         }
     });
 });
