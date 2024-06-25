@@ -270,7 +270,6 @@
       display: flex;
       flex-wrap: wrap;
       text-align: center;
-      gap: 1rem;
       justify-content: center;
       padding: 1rem 2rem 1rem 2rem;
     }
