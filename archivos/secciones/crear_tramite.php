@@ -1,6 +1,7 @@
 <?php include_once '../procesos/verificar_sesion.php'; ?>
 <?php include_once 'header.php'; ?>
 <?php include_once 'header2.php'; ?>
+<?php include 'ventana_modal.php'; ?>
 
 
 <link rel="stylesheet" href="../../css/crear_tramite.css">
@@ -52,3 +53,4 @@
 
 <script src="../../js/tramites.js"></script>
 <script src="../../js/mensajeCerrarSesion.js"></script>
+<script src="../../js/ventana_modal.js"></script>

@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const documentosContainer = document.getElementById('documentosContainer');
     const tramiteForm = document.getElementById('tramiteForm');
     const errorMessageContainer = document.getElementById('errorMessage');
-    const tramiteNombreInput = document.getElementById('tramiteNombre');
-    const tipoTramiteNombreInput = document.getElementById('tipoTramiteNombre');
 
     let tramitesData = [];
 
@@ -30,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const tramite = tramitesData.find(t => t.id === tramiteId);
 
         if (tramite) {
-            tramiteNombreInput.value = tramite.nombre;
             tipoTramiteSelect.innerHTML = '<option value="">Seleccionar...</option>';
             tramite.tipos.forEach(tipo => {
                 const option = document.createElement('option');
@@ -41,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
             tipoTramiteContainer.style.display = 'block';
             documentosContainer.style.display = 'none';
         } else {
-            tramiteNombreInput.value = '';
             tipoTramiteContainer.style.display = 'none';
             documentosContainer.style.display = 'none';
         }
@@ -56,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (tipoTramite) {
             documentosContainer.innerHTML = '';
-            tipoTramite.documentos.forEach((doc, index) => {
+            tipoTramite.documentos.forEach(doc => {
                 const fileUploadDiv = document.createElement('div');
                 fileUploadDiv.className = 'file-upload';
                 const fileLabel = document.createElement('div');
@@ -64,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 fileLabel.textContent = `Copia de ${doc.nombre} ${doc.requerido ? '*' : ''}`;
                 const fileInput = document.createElement('input');
                 fileInput.type = 'file';
-                fileInput.name = `documentos[${index}]`; // Importante para enviar archivos como un array
+                fileInput.name = `documentos[]`; // Reemplazar espacios por guiones bajos y poner en minúscula
                 if (doc.requerido) {
                     fileInput.required = true; // Marcar como requerido si es obligatorio
                 }
@@ -83,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             documentosContainer.style.display = 'block';
         } else {
-            tipoTramiteNombreInput.value = '';
             documentosContainer.style.display = 'none';
         }
     });
@@ -107,8 +102,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         if (valid) {
-            // Si todos los campos están completos, enviar el formulario
-            tramiteForm.submit();
+            const formData = new FormData(tramiteForm);
+            fetch(tramiteForm.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                openModal(data.message);
+                
+            })
+            .catch(error => {
+                openModal('Ocurrió un error al crear el trámite.');
+                console.error('Error al crear el trámite:', error);
+            });
         }
     });
 });
