@@ -53,44 +53,59 @@ function initializePhoneNumberInput() {
   });
 }
 
-// Inicializa la validación del formulario
-function initializeFormValidation() {
-  const input = document.querySelector("#telefono");
-  const errorMsg = document.querySelector("#phone-error");
+    // Inicializa la validación del formulario
+    function initializeFormValidation() {
+      const input = document.querySelector("#telefono");
+      const errorMsg = document.querySelector("#phone-error");
 
-  document
-    .querySelector("#form-registro")
-    .addEventListener("submit", function (event) {
-      const phoneNumber = input.value.replace(/\D/g, ""); // Eliminar todos los caracteres no numéricos
+      // Validación en tiempo real del número de teléfono
+      input.addEventListener("input", function () {
+        const phoneNumber = input.value.replace(/\D/g, ""); // Eliminar todos los caracteres no numéricos
 
-      // Verificar si el número tiene exactamente 10 dígitos y no contiene caracteres no numéricos
-      if (!/^\d{10}$/.test(phoneNumber)) {
-        event.preventDefault();
-        errorMsg.style.display = "block";
-      } else {
-        errorMsg.style.display = "none";
-      }
-    });
-}
+        // Verificar si el número tiene exactamente 10 dígitos
+        if (!/^\d{10}$/.test(phoneNumber)) {
+          errorMsg.style.display = "block";
+        } else {
+          errorMsg.style.display = "none";
+        }
+      });
 
-// Inicializa el selector de país y maneja el cambio de país
-function initializeCountrySelect() {
-  $("#pais").countrySelect({
-    defaultCountry: "co",
-    responsiveDropdown: true,
-  });
+      document
+        .querySelector("#form-registro")
+        .addEventListener("submit", function (event) {
+          const phoneNumber = input.value.replace(/\D/g, ""); // Eliminar todos los caracteres no numéricos
 
-  $("#pais").on("change", function () {
-    const selectedCountry = $("#pais").countrySelect(
-      "getSelectedCountryData"
-    ).iso2;
-    if (selectedCountry === "co") {
-      loadColombianDepartments();
-    } else {
-      resetDepartmentAndMunicipalitySelectors();
+          // Verificar si el número tiene exactamente 10 dígitos y no contiene caracteres no numéricos
+          if (!/^\d{10}$/.test(phoneNumber)) {
+            event.preventDefault();
+            errorMsg.style.display = "block";
+          } else {
+            errorMsg.style.display = "none";
+          }
+        });
     }
-  });
-}
+
+    // Inicializa el selector de país y maneja el cambio de país
+    function initializeCountrySelect() {
+      $("#pais").countrySelect({
+        defaultCountry: "co",
+        responsiveDropdown: true,
+      });
+
+      $("#pais").on("change", function () {
+        const selectedCountry = $("#pais").countrySelect(
+          "getSelectedCountryData"
+        ).iso2;
+        if (selectedCountry === "co") {
+          loadColombianDepartments();
+        } else {
+          resetDepartmentAndMunicipalitySelectors();
+        }
+      });
+    }
+
+    // Llamada para inicializar la validación del formulario
+    initializeFormValidation();
 
 // Carga departamentos y municipios de Colombia
 async function loadColombianDepartments() {
