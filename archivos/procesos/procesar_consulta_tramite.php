@@ -2,6 +2,8 @@
 session_start();
 include_once 'conexion.php';
 
+$response = ['status' => 'error', 'message' => 'Número de radicación no encontrado.'];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $radicacion = $_POST['radicacion'];
 
@@ -13,15 +15,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         $_SESSION['radicacion'] = $radicacion;
-        header("Location: ../secciones/estado-tramite.php");
-    } else {
-        echo "<script>alert('Número de radicación no encontrado.'); window.location.href='../secciones/consulta-tramite.php';</script>";
+        $response['status'] = 'success';
+        $response['message'] = 'Número de radicación encontrado. Redirigiendo...';
     }
 
     $stmt->close();
     $conexion->close();
-} else {
-    header("Location: ../secciones/consulta-tramite.php");
-    exit();
 }
+
+echo json_encode($response);
 ?>

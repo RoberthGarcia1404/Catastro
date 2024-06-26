@@ -1,6 +1,22 @@
 <?php include_once '../procesos/verificar_sesion.php'; ?>
 <?php include_once 'header.php'; ?>
 <?php include_once 'header2.php'; ?>
+<?php include_once '../procesos/conexion.php'; ?>
+
+<?php
+// Obtener el ID del usuario de la sesión
+$usuario_id = $_SESSION['id_cc'];
+$sql = "SELECT primer_nombre, segundo_nombre, primer_apellido, segundo_apellido, tipo_identificacion FROM usuarios WHERE id_cc = ?";
+$stmt = $conexion->prepare($sql);
+$stmt->bind_param('i', $usuario_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$usuario = $result->fetch_assoc();
+
+// Cerrar la conexión y la declaración
+$stmt->close();
+$conexion->close();
+?>
 
 <section style="margin-top:-15px;">
     <h3 class="titulo-tramites titulos-principales">Detalles del predio</h3>
@@ -8,22 +24,22 @@
 
     <p class="parrafos-principales estilo-terciario-parrafos ">Propietarios</p>
     <div class="contenedor-tablas">
-    <table >
-        <thead>
-            <tr>
-                <th>Nombres</th>
-                <th>Tipo de Documento</th>
-                <th>Número de Documento</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>QUIROZ HERNANDEZ NUBIA-SORAYA</td>
-                <td>CC</td>
-                <td>1002522983</td>
-            </tr>
-        </tbody>
-    </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombres</th>
+                    <th>Tipo de Documento</th>
+                    <th>Número de Documento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><?php echo strtoupper(htmlspecialchars($usuario['primer_nombre'] . ' ' . $usuario['segundo_nombre'] . ' ' . $usuario['primer_apellido'] . ' ' . $usuario['segundo_apellido'], ENT_QUOTES, 'UTF-8')); ?></td>
+                    <td><?php echo strtoupper(htmlspecialchars($usuario['tipo_identificacion'], ENT_QUOTES, 'UTF-8')); ?></td>
+                    <td><?php echo strtoupper(htmlspecialchars($usuario_id, ENT_QUOTES, 'UTF-8')); ?></td>
+                </tr>
+            </tbody>
+        </table>
 
     </div>
     <p class="parrafos-principales estilo-terciario-parrafos ">Construcciones</p>
