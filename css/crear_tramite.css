@@ -102,14 +102,6 @@
 
 @media (max-width: 600px) {
     .opciones_tramites {
-        flex-direction: column; /* Cambiar la dirección del flex a columna */
-    }
-
-    .tramite-seccion {
-        order: 1; /* Asegurar que tramite-seccion se muestre primero */
-    }
-
-    #tipoTramiteContainer {
-        order: 2; /* Asegurar que tipoTramiteContainer se muestre después */
+        flex-direction: column; 
     }
 }
