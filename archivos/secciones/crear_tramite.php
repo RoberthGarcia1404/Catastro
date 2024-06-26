@@ -18,7 +18,7 @@
 
         <form id="tramiteForm" action="../procesos/crear_tramites.php" method="POST" enctype="multipart/form-data">
             <div class="opciones_tramites">
-                <div>
+                <div class="tramite-seccion">
                     <input type="hidden" id="nombreTramite" name="nombreTramite">
                     <input type="hidden" id="nombreTipoTramite" name="nombreTipoTramite">
 
