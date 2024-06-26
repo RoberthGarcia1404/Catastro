@@ -1,7 +1,7 @@
 <?php include_once 'header.php'; ?>
 
 <section class="margen-superior-section ">
-    <h1 class="titulos-principales">DECRETOS</h1>
+    <h1 class="titulos-principales">CONPES</h1>
     <p class=" parrafos-principales">Lista de documentos conpes para ver o <strong>descargar</strong> (Click sobre el icono).</p>
 
     <div class="contenido-lista tamaño-letra-descarga ">
