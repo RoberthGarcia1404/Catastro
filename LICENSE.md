@@ -1,6 +1,6 @@
 MIT License (Modificada para uso NO COMERCIAL)
 
-Copyright (c) 2025 Roberth Garcia
+Copyright (c) 2025 Roberth Garcia and Felipe Diaz
 
 Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia de este software y los archivos de documentación asociados (el "Software"), para usar, copiar, modificar, fusionar, publicar y distribuir el Software, **solo con fines personales, educativos o no comerciales**, sujeto a las siguientes condiciones:
 
