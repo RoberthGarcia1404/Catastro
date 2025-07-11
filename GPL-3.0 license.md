@@ -3,25 +3,24 @@ LICENCIA PÚBLICA GENERAL GNU v3 (MODIFICADA PARA USO NO COMERCIAL)
 Este software se distribuye bajo los términos de la Licencia Pública General de GNU, versión 3 (GPLv3), con la siguiente **modificación adicional**:
 
 > **Uso No Comercial**:
-> 
+
 > El uso de este software está limitado a fines personales, educativos, académicos o sin ánimo de lucro.
-> 
+
 > Cualquier uso comercial del software —incluyendo, pero no limitado a, su uso por parte de empresas, entidades gubernamentales, organizaciones con fines de lucro, o como parte de productos o servicios que generen ingresos directa o indirectamente— está expresamente **prohibido** sin una **licencia comercial explícita** otorgada por el autor.
-> 
-> Para adquirir una licencia comercial, comuníquese con: **roberth@example.com**
+
+> Para adquirir una licencia comercial, comuníquese con: santiago.garcia1404@gmail.com
 
 El texto completo de la Licencia Pública General GNU v3 se presenta a continuación sin modificaciones adicionales:
 
 ------------------------------------------------------------------------
-
-                    GNU GENERAL PUBLIC LICENSE
+ GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
-                          Preamble
+                            Preamble
 
   The GNU General Public License is a free, copyleft license for
 software and other kinds of works.
@@ -688,6 +687,5 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
-
 ------------------------------------------------------------------------
 
